@@ -1,0 +1,29 @@
+# Capability manifest for the organization's admission check.
+# jcheng-learning is an L3 capability: datasets, offline training and policy
+# inference (JCHENG-Robotics/.github docs/repo-taxonomy.md, layer L3).
+#
+# v0.1.0 is offline-only. It has no runtime node, publishes no topic, opens no
+# device and consumes no contract at runtime yet. The empty runtime surface is
+# deliberate: a planned capability must not claim a topic it does not serve.
+# From M3 the inference node publishes skill intent on domain 42 and this file
+# gains scopes, topics and a motion_source class through a contract-first PR.
+schema_version: 1
+name: jcheng-learning
+version: 0.1.0
+contract:
+  interfaces: ">=0.1,<0.2"
+  contract_hash: "sha256:0b8d72ced7f54d444d6851d8b99a51a78e2bed3f687324f51a15f76557f24b42"
+  system_api: ">=0.1,<0.2"
+safety:
+  class: offline
+  scopes: []
+  # Required by capability-manifest.v1.schema.json. It is vacuous in v0.1.0
+  # because no intent is produced; it becomes binding at M3.
+  requires_lease: true
+  max_rate_hz: 1
+  deadman_ms: 500
+hardware_access: none
+runtime:
+  ros_domains: []
+  publishes: []
+  subscribes: []

@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+build/
+install/
+log/
+*.egg-info/
+.venv/
+.DS_Store
+
+# Datasets, recordings and model weights live outside the repository.
+datasets/
+models/
+*.pt
+*.onnx
+*.engine
+*_openvino_model/
+*.bag
+*.mcap
+*.db3
+*.mp4
+*.avi
