@@ -44,15 +44,15 @@ Rules that come from the ecosystem and are not negotiable here:
 
 ## 2. Data plane (offline)
 
-Capture is not owned here. The system and perception layers already record
-camera, depth, TF and status streams; the learning repository consumes an
-exported episode set. This keeps the repository free of device access and keeps
-recording policy with the layer that owns the sensors.
+Capture is not owned here. The system and perception layers own the camera,
+depth, TF and status streams; an exporter outside this repository produces the
+episode set, and the learning repository consumes it read-only. This keeps the
+repository free of device access and keeps recording policy with the layer that
+owns the sensors.
 
 The data plane is:
 
-1. external storage holding episodes and a dataset manifest;
-2. an integrity gate that validates layout, schema, counts, timestamps and
+1. external storage holding episodes and a dataset manifest;2. an integrity gate that validates layout, schema, counts, timestamps and
    hashes;
 3. a dataset identifier that is immutable once published.
 
