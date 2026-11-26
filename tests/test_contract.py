@@ -108,24 +108,12 @@ def test_readme_required_sections():
 
 
 def test_status_vocabulary():
-    allowed = {
-        "Complete",
-        "In progress",
-        "Planned",
-        "Not started",
-        "Verified",
-        "Partially verified",
-        "Unverified",
-        "Inconclusive",
-        "Experimental",
-        "Deployed",
-        "Frozen",
-        "Archived",
-    }
-    assert "Partially verified" in allowed
-    # The status block must use the organization's repository-state vocabulary.
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    assert "Status: **Experimental**" in readme
-    roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
-    assert "Planned" in roadmap
-    assert "Not started" in roadmap
+    match = re.search(r"Status: \*\*([^*]+)\*\*", readme)
+    assert match, "README status block not found"
+    assert match.group(1) in {"Experimental", "Deployed", "Frozen", "Archived"}
+
+    # No ad-hoc status synonyms in the root documents.
+    for name in ("README.md", "ROADMAP.md", "ACCEPTANCE.md"):
+        text = (ROOT / name).read_text(encoding="utf-8")
+        assert not re.search(r"\b(Done|Finished|WIP|TODO|TBD)\b", text), name

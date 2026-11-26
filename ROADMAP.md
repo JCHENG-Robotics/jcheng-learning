@@ -1,14 +1,14 @@
 # jcheng-learning roadmap
 
-> Status: **v0.1.0** as of 2026-11-26. Offline-first scaffold; no runtime node
-> and no hardware access.
+> Status: **v0.1.0** as of 2026-11-26. Offline-first scaffold complete; no
+> runtime node and no hardware access.
 
 ## Current state
 
 | Item | State | Evidence |
 |---|---|---|
 | Admission manifest (`capability.yaml`) | Complete (2026-11-26) | `capability.yaml`; `tests/test_contract.py` |
-| Repository scaffold, gate and CI | In progress | `scripts/check_repo_gate.sh`; CI `learning-gate` |
+| Repository scaffold, gate and CI | Complete (2026-11-26) | `scripts/check_repo_gate.sh`; CI `learning-gate` passed |
 | Dataset manifest and integrity gate | Planned | — |
 | Offline training and evaluation harness | Planned | — |
 | Policy inference intent node | Planned | — |
@@ -18,7 +18,7 @@
 
 | Milestone | Scope | State | Exit criterion | Evidence |
 |---|---|---|---|---|
-| M0 | Repository scaffold and admission manifest | In progress | The document set, gate and CI `learning-gate` pass; the manifest claims no runtime surface | `evidence/20261126_scaffold/` |
+| M0 | Repository scaffold and admission manifest | Complete (2026-11-26) | The document set, gate and CI `learning-gate` pass; the manifest claims no runtime surface | `evidence/20261126_scaffold/`; CI run 45733617970 |
 | M1 | Dataset manifest and integrity gate | Planned | A recorded episode set is accepted or rejected by a documented, tested checker; no robot access and no data in git | — |
 | M2 | Offline training and evaluation | Planned | A reproducible training run on external data with fixed seeds, an evaluation protocol and a hashed model artifact; no hardware | — |
 | M3 | Policy inference intent node | Planned | A contract-first intent surface exists in `jcheng-interfaces`; mock integration (L2/L3) proves lease, deadman and fail-closed behavior; no motion | — |
