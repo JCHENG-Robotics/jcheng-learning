@@ -1,8 +1,9 @@
 # Architecture — jcheng-learning
 
-> Status: **Experimental** as of 2026-11-26. Version 0.1.0.
-> v0.1.0 is documentation and admission only: no runtime node, no policy and
-> no device access. The inference plane is planned for M3.
+> Status: **Experimental** as of 2026-11-26. Version 0.2.0.
+> M1 implements the offline data plane (native store, validator, LeRobot v3
+> adapters and CLI). There is still no runtime node, no policy and no device
+> access. The training plane is M2 and the inference plane is M3.
 
 ## 1. Position in the ecosystem
 
@@ -50,11 +51,23 @@ episode set, and the learning repository consumes it read-only. This keeps the
 repository free of device access and keeps recording policy with the layer that
 owns the sensors.
 
-The data plane is:
+M1 implements the data plane as:
 
-1. external storage holding episodes and a dataset manifest;2. an integrity gate that validates layout, schema, counts, timestamps and
-   hashes;
-3. a dataset identifier that is immutable once published.
+1. **Ingest** — `jcheng_learning.synthetic` and
+   `jcheng_learning.lerobot.imports` produce the native store; a future
+   teleop/simulation exporter can write the same format.
+2. **Native store** — `jcheng.dataset.v1` under external storage:
+   `dataset.yaml`, `provenance.json`, `SHA256SUMS` and
+   `episodes/<id>/{meta.json,frames.jsonl,images/}`.
+3. **Validator** — `jcheng_learning.validate` runs the `DQ-*` checks and writes
+   `jcheng.dataset-quality-report.v1`; failures are terminal and never repaired.
+4. **Export** — `jcheng_learning.lerobot.export` calls the official
+   `LeRobotDataset.create/add_frame/save_episode/finalize`; the repository does
+   not write Parquet or MP4 itself.
+5. **CLI** — `jcheng-dataset synth|inspect|validate|stats|report|import|convert|hash`.
+
+The native format is the audit/provenance record. LeRobot v3 is the training
+interchange format; training reads LeRobot, never the native files.
 
 The layout, manifest fields and integrity rules are specified in
 [DATA.md](DATA.md). They are **proposed** until M1 accepts them. No dataset is
@@ -102,6 +115,7 @@ the same PR. The manifest then moves from `safety.class: offline` to
 | No motion command or motion service call | static scan; review of the M3 contract |
 | No fabricated sensor data, depth or TF | review; the data plane records provenance |
 | No model weights or recordings in git | `scripts/check_repo_gate.sh`; `.gitignore` |
+| Core path has no torch, ROS, GPU or network | `pyproject.toml`; core CI; tests |
 | No vendor code copied | review; differences are recorded as documents |
 | Fail closed | no intent on stale input, missing lease, hash mismatch or load failure |
 | One RMW per graph, domain 42 only at M3 | deployment review; the repository ships no DDS configuration |

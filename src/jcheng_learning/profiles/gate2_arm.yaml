@@ -1,0 +1,30 @@
+schema: jcheng.learning.robot_adapter.v1
+id: gate2_arm
+version: "1.0.0"
+display_name: Gate-2 Arm
+
+has_gripper: false
+dof: 2
+joints:
+  - {name: joint1, index: 0, type: revolute, unit: rad, lower: -3.14159, upper: 3.14159, role: joint1}
+  - {name: joint2, index: 1, type: revolute, unit: rad, lower: -3.14159, upper: 3.14159, role: joint2}
+
+state_spaces:
+  - id: gate2_arm.joint_state.v1
+    names: [joint1, joint2]
+    units: [rad, rad]
+    truth_allowed: [measured, commanded]
+
+action_spaces:
+  - id: gate2_arm.joint_position_absolute.v1
+    kind: joint_position_absolute
+    names: [joint1, joint2]
+    units: [rad, rad]
+    limits_known: true
+
+cameras: []
+
+capabilities:
+  mobile_base: false
+  can_lift: false
+  max_payload_kg: null

@@ -1,0 +1,66 @@
+{
+  "dataset": {
+    "path": "evidence/20261126_m2-sweep/seed0-samples.jsonl",
+    "samples": 10,
+    "sha256": "8cb245b9b36a86e3bd254a70a00d449078c2ec425af5d4c36869763977e247d7",
+    "trials": null
+  },
+  "generated_at": "2026-11-26T07:22:11Z",
+  "host": "jerichocheng-Lenovo-Legion-R9000P2021H",
+  "limitations": [
+    "Synthetic data and 20 training steps; not a useful policy.",
+    "Teacher-forced offline action error; no closed-loop success rate.",
+    "No threshold is registered; the result must be inconclusive.",
+    "Data source is synthetic; this result is not a hardware or recorded-data result and must not be reported as one.",
+    "A benchmark threshold is a project gate, not a safety certification."
+  ],
+  "metrics": {
+    "action_mae_rad": {
+      "count": 10,
+      "declared_aggregate": "mean",
+      "kind": "scalar",
+      "max": 0.5618067979812622,
+      "mean": 0.4841073125600815,
+      "min": 0.40268054604530334,
+      "p50": 0.47486191987991333,
+      "p95": 0.5618067979812622,
+      "source": "action_mae_rad",
+      "unit": "rad"
+    },
+    "action_rmse_rad": {
+      "count": 10,
+      "declared_aggregate": "mean",
+      "kind": "scalar",
+      "max": 0.73646479845047,
+      "mean": 0.6378674924373626,
+      "min": 0.5133557319641113,
+      "p50": 0.628343939781189,
+      "p95": 0.73646479845047,
+      "source": "action_rmse_rad",
+      "unit": "rad"
+    }
+  },
+  "notes": [
+    "M2.0 synthetic rehearsal; empty thresholds; not a policy-quality result"
+  ],
+  "operator": "JerichoCheng",
+  "report_kind": "benchmark-report",
+  "result": "inconclusive",
+  "result_reason": "suite declares no thresholds; the result is informational",
+  "schema_version": 1,
+  "suite": {
+    "data_source": "synthetic",
+    "description": "Informational suite for the M2.0 synthetic ArmPi rehearsal. One JSONL row per held-out frame, produced by jcheng-eval with a fixed inference seed. This is a harness check, not a policy-quality or hardware result.",
+    "id": "m2-rehearsal-action-error-v1",
+    "level": "L1",
+    "min_samples": 10,
+    "path": "docs/m2/suites/m2-rehearsal-action-error-v1.yaml",
+    "sha256": "e8d80f7c2a2c5e5c036232cf5d8f201b182792eacd7eb59eb6066964e8dd9172",
+    "title": "SmolVLA synthetic rehearsal held-out action error"
+  },
+  "thresholds": [],
+  "tool": {
+    "name": "jcheng-benchmark",
+    "version": "0.1.0"
+  }
+}

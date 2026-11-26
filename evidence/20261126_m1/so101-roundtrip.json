@@ -1,0 +1,17 @@
+{
+  "action_max_abs_diff": 0.0,
+  "codebase_version": "v3.0",
+  "dataset": "lerobot/svla_so101_pickplace",
+  "dropped_frames": 0,
+  "episodes": 50,
+  "frames": 11939,
+  "lerobot_export": "/tmp/m1-evidence/export-so101",
+  "lerobot_version": "0.7.0",
+  "native_dataset_id": "public-so101_follower-f641879e2217",
+  "native_root_sha256": "sha256:f0b5eea6640e660e56244dc8e23c09f62e22dc45c0fb03b52d57402efe796c71",
+  "result": "pass",
+  "revision": "f641879e22172be7e8161d5e6c1503c2d2feb657",
+  "schema": "jcheng.m1.compat-evidence.v1",
+  "source_class": "public-real",
+  "state_max_abs_diff": 0.0
+}

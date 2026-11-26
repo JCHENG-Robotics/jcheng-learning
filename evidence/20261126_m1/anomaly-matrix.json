@@ -1,0 +1,126 @@
+{
+  "cases": [
+    {
+      "case": 1,
+      "expected_check": "DQ-V01",
+      "injection": "state contains NaN",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_nan_state"
+    },
+    {
+      "case": 2,
+      "expected_check": "DQ-V01",
+      "injection": "action contains +Inf",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_inf_action"
+    },
+    {
+      "case": 3,
+      "expected_check": "DQ-J01",
+      "injection": "state dimension is short",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_wrong_state_dimension"
+    },
+    {
+      "case": 4,
+      "expected_check": "DQ-J01",
+      "injection": "action dimension is long",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_wrong_action_dimension"
+    },
+    {
+      "case": 5,
+      "expected_check": "DQ-J02",
+      "injection": "joint2/joint3 order swapped",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_joint_order_permutation"
+    },
+    {
+      "case": 6,
+      "expected_check": "DQ-I01",
+      "injection": "one external image frame missing",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_missing_camera_entry"
+    },
+    {
+      "case": 7,
+      "expected_check": "DQ-I03",
+      "injection": "PNG truncated",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_corrupt_image"
+    },
+    {
+      "case": 8,
+      "expected_check": "DQ-I04",
+      "injection": "image size differs from manifest",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_image_shape_mismatch"
+    },
+    {
+      "case": 9,
+      "expected_check": "DQ-T02",
+      "injection": "timestamp regresses",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_timestamp_regression"
+    },
+    {
+      "case": 10,
+      "expected_check": "DQ-T05",
+      "injection": "duplicate (stream,timestamp)",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_duplicate_timestamp"
+    },
+    {
+      "case": 11,
+      "expected_check": "DQ-J04",
+      "injection": "own-real uses deg with si_conformant=true",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_own_real_requires_si"
+    },
+    {
+      "case": 12,
+      "expected_check": "DQ-J06",
+      "injection": "canonical/raw gripper mixed",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_gripper_space_mismatch"
+    },
+    {
+      "case": 13,
+      "expected_check": "DQ-M04",
+      "injection": "SHA256SUMS does not match a file",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_hash_mismatch_is_detected"
+    },
+    {
+      "case": 14,
+      "expected_check": "DQ-M04",
+      "injection": "referenced file missing",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_missing_file_without_resigning"
+    },
+    {
+      "case": 15,
+      "expected_check": "DQ-P05",
+      "injection": "own-real lacks authorization_ref",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_own_real_requires_authorization"
+    },
+    {
+      "case": 16,
+      "expected_check": "DQ-P02",
+      "injection": "truth_source=bus_read without measurements",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_bus_read_requires_measurements"
+    },
+    {
+      "case": 17,
+      "expected_check": "DQ-P07",
+      "injection": "simulation uses generator_truth",
+      "result": "pass",
+      "test": "tests/test_validate.py::test_truth_source_must_match_source_class"
+    }
+  ],
+  "note": "Each case is injected into a deterministic synthetic dataset; the expected DQ check fails and the CLI exits 1.",
+  "result": "pass",
+  "schema": "jcheng.m1.anomaly-matrix.v1"
+}

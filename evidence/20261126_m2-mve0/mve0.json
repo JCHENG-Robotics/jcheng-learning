@@ -1,0 +1,88 @@
+{
+  "batch_results": [
+    {
+      "batch": 1,
+      "loss": 1.4,
+      "max_alloc_gb": 1.67,
+      "ok": true,
+      "step_s": 1.449
+    },
+    {
+      "batch": 2,
+      "loss": 2.016,
+      "max_alloc_gb": 1.67,
+      "ok": true,
+      "step_s": 0.958
+    },
+    {
+      "batch": 4,
+      "loss": 3.643,
+      "max_alloc_gb": 2.01,
+      "ok": true,
+      "step_s": 1.161
+    },
+    {
+      "batch": 8,
+      "loss": 3.942,
+      "max_alloc_gb": 3.14,
+      "ok": true,
+      "step_s": 1.391
+    },
+    {
+      "allocated_gb": 5.19,
+      "batch": 16,
+      "error": "CUDA out of memory",
+      "ok": false
+    },
+    {
+      "allocated_gb": 5.22,
+      "batch": 32,
+      "error": "CUDA out of memory",
+      "ok": false
+    }
+  ],
+  "dataset": {
+    "cameras": [
+      "external",
+      "wrist"
+    ],
+    "episodes": 1,
+    "fps": 10,
+    "frames": 60,
+    "image_size": [
+      64,
+      48
+    ],
+    "policy_empty_cameras": 1,
+    "profile": "armpi_ultra",
+    "rename_map": {
+      "observation.images.external": "observation.images.camera1",
+      "observation.images.wrist": "observation.images.camera2"
+    },
+    "source": "deterministic synthetic"
+  },
+  "date": "2026-11-26",
+  "environment": {
+    "cuda": "13.2",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU 6144 MiB",
+    "learnable_params": 99880992,
+    "lerobot": "0.7.0",
+    "model": "lerobot/smolvla_base (Apache-2.0)",
+    "other_gpu_process_mb": 112,
+    "python": "3.12.3",
+    "torch": "2.15.0+cu132",
+    "total_params": 450046176,
+    "transformers": "5.22.2",
+    "usable_vram_gb": 5.67
+  },
+  "limitations": [
+    "One optimizer step per batch; no convergence or evaluation.",
+    "Synthetic 64x48 images are resized/padded by the policy; real 640x480 data has the same policy-side resize but different decode/load cost.",
+    "Batch 16/32 OOM includes a 112 MB unrelated GPU process and allocator fragmentation; the exact boundary was not bisected.",
+    "No checkpoint was promoted; the step-1 checkpoint under /tmp was disposable.",
+    "No robot, DDS, camera or motion path was touched."
+  ],
+  "result": "batch_size 8 fits with ~2.5 GB headroom; batch_size 16 OOM. M2 candidate batch 8 (or lower with gradient accumulation).",
+  "schema": "jcheng.m2.mve0.v1",
+  "scope": "SmolVLA fine-tune feasibility on the 6 GB RTX 3060 Laptop; one optimizer step per batch size; no policy promotion, no robot."
+}

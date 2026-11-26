@@ -1,0 +1,75 @@
+{
+  "checkpoint": {
+    "files": {
+      "config.json": "0a3bde4e183cd4d742575740ddc8cfe291b8c613ef9b7b885a41b2b96d25dc15",
+      "model.safetensors": "2edde41ceeb6730edb86ae959fce5e46ac381771ec0ce383cc3e22b468987f80",
+      "policy_postprocessor.json": "2b78bb742065288df2ec63b0ee35f97a1f6950171cf2272f7e34b1fe3873b17b",
+      "policy_postprocessor_step_0_unnormalizer_processor.safetensors": "1fda8f9c681e310efd1f80a60a6addbca86d3ab1c2c26f8686e939a0f15d9cde",
+      "policy_preprocessor.json": "2249faab6d9ba5b9edee9738976c1f04d0325721fbcee0154e50d47555a87bee",
+      "policy_preprocessor_step_5_normalizer_processor.safetensors": "2538f632c2a5e10829e1cd196374ca062762a59e936788748355648f0d563574",
+      "tokenizer/chat_template.jinja": "af80b984f1e7c2dff1bb2dc3ecbf83fe385ab1cf84118b810e4bf64e73b414b8",
+      "tokenizer/tokenizer.json": "fd73abe390ac52c1058c41c69715800963dd1bc77a5867cade946a544eee219e",
+      "tokenizer/tokenizer_config.json": "1b9c747d99335b18b12ac45412a36ff88ee52c440eba779a0d041f4226bcbfb3",
+      "train_config.json": "ace5d250e9af8fd0990b439b2c7194a5e088458b145a8445572dd962f22626b9"
+    },
+    "path": "/opt/jcheng/models/m2-sweep-20261126/seed2/checkpoints/000020/pretrained_model"
+  },
+  "dataset": {
+    "cameras": [
+      "external",
+      "wrist"
+    ],
+    "dataset_id": "synthetic-armpi_ultra-000003e9",
+    "episodes": 3,
+    "frames": 240,
+    "info_sha256": "23625db9ae22cd281dff05357b90357f90287e9bb5a51a6dd9784317a5972f28",
+    "profile": "armpi_ultra",
+    "root": "/tmp/m2-rehearsal-data/lerobot-train"
+  },
+  "result": "pass",
+  "run": {
+    "batch_size": 8,
+    "command": [
+      "/tmp/jcheng-m2-gpu/bin/lerobot-train",
+      "--policy.path=lerobot/smolvla_base",
+      "--policy.repo_id=local/m2-rehearsal",
+      "--policy.push_to_hub=false",
+      "--policy.empty_cameras=1",
+      "--policy.device=cuda",
+      "--dataset.repo_id=local/synthetic-armpi_ultra-000003e9",
+      "--dataset.root=/tmp/m2-rehearsal-data/lerobot-train",
+      "--rename_map={\"observation.images.external\":\"observation.images.camera1\",\"observation.images.wrist\":\"observation.images.camera2\"}",
+      "--batch_size=8",
+      "--steps=20",
+      "--num_workers=0",
+      "--save_freq=20",
+      "--log_freq=1",
+      "--output_dir=/opt/jcheng/models/m2-sweep-20261126/seed2",
+      "--job_name=m2-rehearsal",
+      "--trackio.enable=false",
+      "--seed=2"
+    ],
+    "duration_s": 28.762,
+    "empty_cameras": 1,
+    "log": "/opt/jcheng/models/m2-sweep-20261126/seed2/train.log",
+    "policy_path": "lerobot/smolvla_base",
+    "rename_map": {
+      "observation.images.external": "observation.images.camera1",
+      "observation.images.wrist": "observation.images.camera2"
+    },
+    "returncode": 0,
+    "seed": 2,
+    "started_at": "2026-11-26T07:13:35.734297+00:00",
+    "steps": 20
+  },
+  "schema": "jcheng.m2.train-record.v1",
+  "tool": {
+    "git_commit": "d15c13cbd67e105cac078f75d0e9b2ddb74e2717",
+    "git_dirty": true,
+    "jcheng_learning": "0.2.0",
+    "lerobot": "0.7.0",
+    "lock_sha256": "sha256:a866bfd19d1750faba90b51dd0d7b93e2ce720d1f78b66617a9deec54ba013e7",
+    "python": "3.12.3",
+    "torch": "2.15.0"
+  }
+}

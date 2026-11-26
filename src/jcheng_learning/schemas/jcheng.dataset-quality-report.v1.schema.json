@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jcheng-robotics.github.io/schemas/jcheng.dataset-quality-report.v1.schema.json",
+  "title": "JCHENG dataset quality report v1",
+  "type": "object",
+  "required": ["schema", "dataset", "tool", "run", "summary", "checks", "features", "episodes", "limitations"],
+  "properties": {
+    "schema": {"const": "jcheng.dataset-quality-report.v1"},
+    "dataset": {
+      "type": "object",
+      "required": ["id", "root_sha256", "source_class", "profile_id"],
+      "properties": {
+        "id": {"type": "string"},
+        "root_sha256": {"type": "string"},
+        "source_class": {"type": ["string", "null"]},
+        "profile_id": {"type": ["string", "null"]},
+        "profile_sha256": {"type": ["string", "null"]}
+      }
+    },
+    "tool": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": {"type": "string"},
+        "version": {"type": "string"},
+        "git_commit": {"type": ["string", "null"]},
+        "lock_sha256": {"type": ["string", "null"]}
+      }
+    },
+    "run": {
+      "type": "object",
+      "required": ["started_at", "duration_s"],
+      "properties": {
+        "started_at": {"type": "string"},
+        "duration_s": {"type": "number", "minimum": 0},
+        "deterministic": {"type": "boolean"}
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["result", "usable_for_training", "errors", "warnings", "skipped", "inconclusive", "checks"],
+      "properties": {
+        "result": {"enum": ["pass", "degraded", "fail", "inconclusive"]},
+        "usable_for_training": {"type": "boolean"},
+        "errors": {"type": "integer", "minimum": 0},
+        "warnings": {"type": "integer", "minimum": 0},
+        "skipped": {"type": "integer", "minimum": 0},
+        "inconclusive": {"type": "integer", "minimum": 0},
+        "checks": {"type": "integer", "minimum": 0}
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "severity", "status", "message"],
+        "properties": {
+          "id": {"type": "string"},
+          "severity": {"enum": ["error", "warning", "info"]},
+          "status": {"enum": ["pass", "fail", "skip", "inconclusive"]},
+          "message": {"type": "string"},
+          "counts": {"type": "object"},
+          "samples": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "features": {"type": "object"},
+    "episodes": {"type": "array", "items": {"type": "object"}},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

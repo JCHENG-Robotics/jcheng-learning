@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=71.0.0,<85.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jcheng-learning"
+version = "0.2.0"
+description = "JCHENG Robotics learning capability: offline datasets, validation and policy artifacts"
+requires-python = ">=3.12"
+dependencies = [
+    "PyYAML==6.0.2",
+    "pyarrow==24.0.0",
+    "numpy==2.2.6",
+    "Pillow==13.0.0",
+    "jsonschema==4.26.0",
+    "huggingface_hub==2.4.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest==8.3.4",
+    "pytest-cov==4.1.0",
+]
+video = [
+    "av==15.1.0",
+]
+lerobot = [
+    "lerobot[dataset]==0.7.0",
+]
+
+[project.scripts]
+jcheng-dataset = "jcheng_learning.cli:main"
+jcheng-train = "jcheng_learning.train:main"
+jcheng-eval = "jcheng_learning.evaluate:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+jcheng_learning = ["profiles/*.yaml", "schemas/*.json", "action_maps/*.yaml"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"

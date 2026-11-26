@@ -1,0 +1,27 @@
+schema_version: 1
+suite: m2-action-error-v1
+title: ArmPi held-out action error (recorded)
+level: L4
+data_source: recorded
+description: >-
+  Formal offline action-error suite for an ArmPi policy. Input is one JSONL row
+  per held-out frame, produced by jcheng-eval with a fixed inference seed and a
+  checkpoint whose SHA-256 is recorded. Teacher-forced only; no success rate.
+min_samples: 30
+metrics:
+  - id: action_mae_rad
+    kind: scalar
+    source: action_mae_rad
+    aggregate: mean
+    unit: rad
+  - id: action_rmse_rad
+    kind: scalar
+    source: action_rmse_rad
+    aggregate: mean
+    unit: rad
+thresholds: []
+limitations:
+  - Thresholds must be registered here before the held-out data is collected.
+  - Empty thresholds make the benchmark result inconclusive, not pass.
+  - own-real data must have state.truth_source=bus_read.
+  - No hardware motion, closed-loop success or safety claim.

@@ -1,0 +1,31 @@
+schema: jcheng.learning.robot_adapter.v1
+id: pusht_2d
+version: "1.0.0"
+display_name: PushT 2D public benchmark (not a JCHENG robot)
+
+has_gripper: false
+dof: 2
+joints:
+  - {name: motor_0, index: 0, type: revolute, unit: px, lower: 0.0, upper: 512.0, role: motor_0}
+  - {name: motor_1, index: 1, type: revolute, unit: px, lower: 0.0, upper: 512.0, role: motor_1}
+
+state_spaces:
+  - id: pusht_2d.joint_state.v1
+    names: [motor_0, motor_1]
+    units: [px, px]
+    truth_allowed: [unknown]
+
+action_spaces:
+  - id: pusht_2d.joint_position_absolute.v1
+    kind: joint_position_absolute
+    names: [motor_0, motor_1]
+    units: [px, px]
+    limits_known: true
+
+cameras:
+  - {key: image, role: external, required: true, width: 96, height: 96, rate_hz: 10.0}
+
+capabilities:
+  mobile_base: false
+  can_lift: false
+  max_payload_kg: null

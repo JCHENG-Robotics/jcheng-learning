@@ -1,0 +1,521 @@
+{
+  "checks": [
+    {
+      "counts": {},
+      "id": "DQ-I01",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I02",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I03",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I04",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I05",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I06",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I07",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I08",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I09",
+      "message": "native images; no video",
+      "samples": [],
+      "severity": "error",
+      "status": "skip"
+    },
+    {
+      "counts": {},
+      "id": "DQ-J01",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 2
+      },
+      "id": "DQ-J02",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-J03",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 2
+      },
+      "id": "DQ-J04",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 2
+      },
+      "id": "DQ-J05",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 2
+      },
+      "id": "DQ-J06",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-J07",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 2
+      },
+      "id": "DQ-J08",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 2
+      },
+      "id": "DQ-J09",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-M01",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-M02",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-M03",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-M04",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-M05",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "episodes": 2,
+        "frames": 16
+      },
+      "id": "DQ-M06",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-M07",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-M08",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-P01",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-P02",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "entries": 0
+      },
+      "id": "DQ-P03",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-P04",
+      "message": "internal synthetic/simulation data",
+      "samples": [],
+      "severity": "error",
+      "status": "skip"
+    },
+    {
+      "counts": {},
+      "id": "DQ-P05",
+      "message": "not own-real",
+      "samples": [],
+      "severity": "error",
+      "status": "skip"
+    },
+    {
+      "counts": {},
+      "id": "DQ-P06",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-P07",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-T01",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-T02",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-T03",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "max_jitter_ms": 0.0,
+        "occurrences": 2
+      },
+      "id": "DQ-T04",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-T05",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-T06",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 2
+      },
+      "id": "DQ-T07",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 2
+      },
+      "id": "DQ-T08",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-V01",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-V02",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-V03",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-V04",
+      "message": "no velocity feature in v1",
+      "samples": [],
+      "severity": "warning",
+      "status": "skip"
+    },
+    {
+      "counts": {},
+      "id": "DQ-V05",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-V06",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-X01",
+      "message": "no split declaration in v1",
+      "samples": [],
+      "severity": "error",
+      "status": "skip"
+    },
+    {
+      "counts": {},
+      "id": "DQ-X02",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-X03",
+      "message": "no declared aggregate stats in v1",
+      "samples": [],
+      "severity": "error",
+      "status": "skip"
+    },
+    {
+      "counts": {},
+      "id": "DQ-X04",
+      "message": "export round-trip is a separate check",
+      "samples": [],
+      "severity": "error",
+      "status": "skip"
+    },
+    {
+      "counts": {
+        "occurrences": 2
+      },
+      "id": "DQ-X05",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 2
+      },
+      "id": "DQ-X06",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    }
+  ],
+  "dataset": {
+    "id": "synthetic-armpi_ultra-01352906",
+    "profile_id": "armpi_ultra",
+    "profile_sha256": "sha256:f52ed94a5d2ac835152312dfb6514c6f32c0b3a322610c28d2d824c7421785b5",
+    "root_sha256": "sha256:6c176d24b23733edb379f42060d2061308a1b60bb01dfb5d19f35921aa3fc04c",
+    "source_class": "synthetic"
+  },
+  "episodes": [
+    {
+      "digest": "2747d15256b2fd51019d57dcf700239f900325d2fbd1d511a5ad87bbc12c6a73",
+      "duration_s": 0.8,
+      "frames": 8,
+      "id": "ep_0000",
+      "images": 16
+    },
+    {
+      "digest": "6def750679a0dd575e4a80a2e5d3419a8beed695b7f5af55adef99ee90a89e5b",
+      "duration_s": 0.8,
+      "frames": 8,
+      "id": "ep_0001",
+      "images": 16
+    }
+  ],
+  "features": {
+    "action": {
+      "count": 96,
+      "max": 2.22,
+      "mean": 0.15030923631575702,
+      "min": -1.2376312432867467,
+      "q01": -1.2371028972082763,
+      "q99": 2.22,
+      "std": 0.8327578616202982
+    },
+    "observation.state": {
+      "count": 96,
+      "max": 2.22,
+      "mean": 0.15020290047218202,
+      "min": -1.2574184082192144,
+      "q01": -1.256890062140744,
+      "q99": 2.22,
+      "std": 0.833061064686193
+    }
+  },
+  "limitations": [],
+  "run": {
+    "deterministic": true,
+    "duration_s": 0.034,
+    "started_at": "2026-11-26T06:18:03.677762+00:00"
+  },
+  "schema": "jcheng.dataset-quality-report.v1",
+  "summary": {
+    "checks": 53,
+    "errors": 0,
+    "inconclusive": 0,
+    "result": "pass",
+    "skipped": 7,
+    "usable_for_training": true,
+    "warnings": 0
+  },
+  "tool": {
+    "git_commit": "d15c13cbd67e105cac078f75d0e9b2ddb74e2717",
+    "lock_sha256": "sha256:a866bfd19d1750faba90b51dd0d7b93e2ce720d1f78b66617a9deec54ba013e7",
+    "name": "jcheng-dataset",
+    "version": "0.2.0"
+  }
+}

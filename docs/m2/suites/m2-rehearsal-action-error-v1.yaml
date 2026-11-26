@@ -1,0 +1,26 @@
+schema_version: 1
+suite: m2-rehearsal-action-error-v1
+title: SmolVLA synthetic rehearsal held-out action error
+level: L1
+data_source: synthetic
+description: >-
+  Informational suite for the M2.0 synthetic ArmPi rehearsal. One JSONL row per
+  held-out frame, produced by jcheng-eval with a fixed inference seed. This is
+  a harness check, not a policy-quality or hardware result.
+min_samples: 10
+metrics:
+  - id: action_mae_rad
+    kind: scalar
+    source: action_mae_rad
+    aggregate: mean
+    unit: rad
+  - id: action_rmse_rad
+    kind: scalar
+    source: action_rmse_rad
+    aggregate: mean
+    unit: rad
+thresholds: []
+limitations:
+  - Synthetic data and 20 training steps; not a useful policy.
+  - Teacher-forced offline action error; no closed-loop success rate.
+  - No threshold is registered; the result must be inconclusive.

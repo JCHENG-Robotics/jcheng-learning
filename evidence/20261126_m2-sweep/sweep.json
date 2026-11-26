@@ -1,0 +1,84 @@
+{
+  "benchmark": {
+    "exit_code": 2,
+    "note": "Empty thresholds by design; benchmark must not be reported as pass.",
+    "report": "benchmark-rehearsal-report.json",
+    "report_markdown": "benchmark-rehearsal-report.md",
+    "result": "inconclusive",
+    "suite": "docs/m2/suites/m2-rehearsal-action-error-v1.yaml"
+  },
+  "dataset": {
+    "train_dataset_id": "synthetic-armpi_ultra-000003e9",
+    "train_root_sha256": "sha256:a5ecace2d546bad86c44064b9bd1feadc5e991fbe9481f7be7f86694933d46c4",
+    "val_dataset_id": "synthetic-armpi_ultra-000007d2",
+    "val_root_sha256": "sha256:69343e15fc13e7e2fd95065e9ad9be27a27b78e076a1c4ff5bfba7f9a1271007"
+  },
+  "date": "2026-11-26",
+  "environment": {
+    "batch_size": 8,
+    "eval_samples": 10,
+    "eval_seed": 0,
+    "gpu": "RTX 3060 Laptop 6GB",
+    "lerobot": "0.7.0",
+    "steps": 20,
+    "torch": "2.15.0+cu132"
+  },
+  "limitations": [
+    "Synthetic data and 20 steps only; no convergence, success rate or deployment claim.",
+    "Teacher-forced offline action error, not closed-loop control.",
+    "Batch 8 fits; batch 16 OOM; boundary not bisected.",
+    "Three seeds are a pipeline stability check, not a hyper-parameter study."
+  ],
+  "repeatability": {
+    "note": "A repeated seed-0 run produced the same model.safetensors hash and the same seeded eval metrics; eval inference is seeded.",
+    "same_eval_metrics": true,
+    "same_model_sha256": true,
+    "seed": 0
+  },
+  "result": "pass",
+  "runs": [
+    {
+      "action_mae": 0.48410730362993976,
+      "action_rmse": 0.6378674924373626,
+      "eval": "seed0-eval.json",
+      "final_loss": 1.199,
+      "mem_gb": 3.53,
+      "model_sha256": "sha256:14dee4d174de35a97e33f3c8832b1ed0b42e4e1d9a3059680386bcc2d6d633cb",
+      "samples_jsonl": "seed0-samples.jsonl",
+      "seed": 0,
+      "train_record": "seed0-train-record.json"
+    },
+    {
+      "action_mae": 0.5098784964826579,
+      "action_rmse": 0.6832381427288056,
+      "eval": "seed1-eval.json",
+      "final_loss": 1.298,
+      "mem_gb": 3.53,
+      "model_sha256": "sha256:6151fbd2e5a6a047cc7aab863bbe8cacfeb6d35513ef452ef2cbdb75c0a306d1",
+      "samples_jsonl": "seed1-samples.jsonl",
+      "seed": 1,
+      "train_record": "seed1-train-record.json"
+    },
+    {
+      "action_mae": 0.48115594560001046,
+      "action_rmse": 0.6329426825046539,
+      "eval": "seed2-eval.json",
+      "final_loss": 1.265,
+      "mem_gb": 3.53,
+      "model_sha256": "sha256:2edde41ceeb6730edb86ae959fce5e46ac381771ec0ce383cc3e22b468987f80",
+      "samples_jsonl": "seed2-samples.jsonl",
+      "seed": 2,
+      "train_record": "seed2-train-record.json"
+    }
+  ],
+  "schema": "jcheng.m2.sweep.v1",
+  "scope": "Synthetic ArmPi M2.0 pipeline repertoire; 20 steps per seed, batch 8; no policy-quality claim.",
+  "stats": {
+    "action_mae_mean": 0.49171391523753605,
+    "action_mae_pstdev": 0.012900688286888215,
+    "action_rmse_mean": 0.6513494392236073,
+    "action_rmse_pstdev": 0.022638175672230545,
+    "final_loss_mean": 1.254,
+    "final_loss_pstdev": 0.04115823125451333
+  }
+}

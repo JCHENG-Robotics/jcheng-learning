@@ -1,0 +1,95 @@
+{
+  "artifact": {
+    "files": {
+      "config.json": "sha256:0a3bde4e183cd4d742575740ddc8cfe291b8c613ef9b7b885a41b2b96d25dc15",
+      "model.safetensors": "sha256:14dee4d174de35a97e33f3c8832b1ed0b42e4e1d9a3059680386bcc2d6d633cb",
+      "policy_postprocessor.json": "sha256:2b78bb742065288df2ec63b0ee35f97a1f6950171cf2272f7e34b1fe3873b17b",
+      "policy_postprocessor_step_0_unnormalizer_processor.safetensors": "sha256:1fda8f9c681e310efd1f80a60a6addbca86d3ab1c2c26f8686e939a0f15d9cde",
+      "policy_preprocessor.json": "sha256:2249faab6d9ba5b9edee9738976c1f04d0325721fbcee0154e50d47555a87bee",
+      "policy_preprocessor_step_5_normalizer_processor.safetensors": "sha256:2538f632c2a5e10829e1cd196374ca062762a59e936788748355648f0d563574",
+      "tokenizer/chat_template.jinja": "sha256:af80b984f1e7c2dff1bb2dc3ecbf83fe385ab1cf84118b810e4bf64e73b414b8",
+      "tokenizer/tokenizer.json": "sha256:fd73abe390ac52c1058c41c69715800963dd1bc77a5867cade946a544eee219e",
+      "tokenizer/tokenizer_config.json": "sha256:1b9c747d99335b18b12ac45412a36ff88ee52c440eba779a0d041f4226bcbfb3",
+      "train_config.json": "sha256:22a42eaa98cb13c438f0233f5f81220a84c031c907271650ce6b547d85008b48"
+    },
+    "model_sha256": "sha256:14dee4d174de35a97e33f3c8832b1ed0b42e4e1d9a3059680386bcc2d6d633cb",
+    "path": "/opt/jcheng/models/m2-rehearsal-20261126/checkpoints/000020/pretrained_model"
+  },
+  "base_model": "lerobot/smolvla_base",
+  "created_at": "2026-11-26T15:10:00+08:00",
+  "dataset": {
+    "train": {
+      "dataset_id": "synthetic-armpi_ultra-000003e9",
+      "profile": "armpi_ultra",
+      "root": "/tmp/m2-rehearsal-data/lerobot-train",
+      "root_sha256": "sha256:a5ecace2d546bad86c44064b9bd1feadc5e991fbe9481f7be7f86694933d46c4",
+      "source_class": "synthetic"
+    },
+    "val": {
+      "dataset_id": "synthetic-armpi_ultra-000007d2",
+      "info_sha256": "1f0429e20a4d13df1af5728c1623b71436c19663a23def1749823cbfaa107f6a",
+      "profile": "armpi_ultra",
+      "root": "/tmp/m2-rehearsal-data/lerobot-val",
+      "root_sha256": "sha256:69343e15fc13e7e2fd95065e9ad9be27a27b78e076a1c4ff5bfba7f9a1271007",
+      "source_class": "synthetic"
+    }
+  },
+  "evaluation": {
+    "metrics": {
+      "action_dim": 6,
+      "action_mae": 0.48410730362993976,
+      "action_rmse": 0.6378674924373626,
+      "chunk_size": 50,
+      "n_samples": 10,
+      "per_dim_mae": [
+        0.5317683666944504,
+        0.25593155771493914,
+        0.251322278380394,
+        0.4600998818874359,
+        0.4973225176334381,
+        0.9081991851329804
+      ]
+    },
+    "protocol": "docs/m2/EVAL.md (v1, frozen 2026-11-26)",
+    "schema": "jcheng.m2.eval.v1"
+  },
+  "hardware_validation": false,
+  "limitations": [
+    "Synthetic data rehearsal; not a useful policy and not evidence of task success.",
+    "Teacher-forced offline action error; no closed-loop control or success rate.",
+    "No robot, camera, DDS, lease or motion path was used.",
+    "The 6 GB batch boundary is 8 (fits) vs 16 (OOM); not bisected."
+  ],
+  "no_hardware": true,
+  "policy_id": "m2-rehearsal-20261126",
+  "schema": "jcheng.policy-card.v1",
+  "status": "rehearsal-only",
+  "training": {
+    "batch_size": 8,
+    "command": [
+      "/tmp/jcheng-m2-gpu/bin/lerobot-train",
+      "--policy.path=lerobot/smolvla_base",
+      "--policy.repo_id=local/m2-rehearsal",
+      "--policy.push_to_hub=false",
+      "--policy.empty_cameras=1",
+      "--policy.device=cuda",
+      "--dataset.repo_id=local/synthetic-armpi_ultra-000003e9",
+      "--dataset.root=/tmp/m2-rehearsal-data/lerobot-train",
+      "--rename_map={\"observation.images.external\":\"observation.images.camera1\",\"observation.images.wrist\":\"observation.images.camera2\"}",
+      "--batch_size=8",
+      "--steps=20",
+      "--num_workers=0",
+      "--save_freq=20",
+      "--log_freq=1",
+      "--output_dir=/opt/jcheng/models/m2-rehearsal-20261126",
+      "--job_name=m2-rehearsal",
+      "--trackio.enable=false",
+      "--seed=0"
+    ],
+    "duration_s": 28.803,
+    "final_loss": 1.199,
+    "mem_gb": 3.53,
+    "seed": 0,
+    "steps": 20
+  }
+}

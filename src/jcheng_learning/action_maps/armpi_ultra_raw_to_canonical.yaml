@@ -1,0 +1,13 @@
+schema: jcheng.action-map.v1
+from_space: armpi_ultra.raw_joint.v1
+to_space: armpi_ultra.joint_position_absolute.v1
+transfer_claim: none
+rules:
+  - {to_index: 0, to_name: joint1, from_index: 0, from_name: joint1, scale: 1.0, offset: 0.0, unit_in: rad, unit_out: rad}
+  - {to_index: 1, to_name: joint2, from_index: 1, from_name: joint2, scale: 1.0, offset: 0.0, unit_in: rad, unit_out: rad}
+  - {to_index: 2, to_name: joint3, from_index: 2, from_name: joint3, scale: 1.0, offset: 0.0, unit_in: rad, unit_out: rad}
+  - {to_index: 3, to_name: joint4, from_index: 3, from_name: joint4, scale: 1.0, offset: 0.0, unit_in: rad, unit_out: rad}
+  - {to_index: 4, to_name: joint5, from_index: 4, from_name: joint5, scale: 1.0, offset: 0.0, unit_in: rad, unit_out: rad}
+  - {to_index: 5, to_name: r_joint, from_index: 5, from_name: r_joint, scale: -1.0, offset: 0.0, unit_in: rad, unit_out: rad,
+     note: "raw r_joint -2.22..0 (increasing closes) -> canonical 0..2.22 (0 closed, positive open)"}
+unmapped: []

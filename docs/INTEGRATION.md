@@ -1,8 +1,8 @@
 # Integration — jcheng-learning
 
-> Status: **Experimental** as of 2026-11-26. v0.1.0 has no runtime surface:
+> Status: **Experimental** as of 2026-11-26. v0.2.0 has no runtime surface:
 > no node is started, no topic is published and no lease is acquired.
-> The M3 contract below is planned, not implemented.
+> M1 adds the offline data plane only. The M3 contract below is planned.
 
 ## 1. Discovery and admission
 
@@ -29,7 +29,8 @@ same PR. Until then, the system must not assume a learning node exists.
 
 | Input | Owner | Used at | Note |
 |---|---|---|---|
-| Recorded episodes | system/perception capture | M1 | exported files; no device access here |
+| Recorded episodes | system/perception capture | M1 (implemented) | exported native files; no device access here |
+| Public LeRobot v3 datasets | Hugging Face / operator storage | M1 (implemented) | imported to the native store; units preserved |
 | Camera, depth, TF streams | perception | M3 | advisory only; never reconstructed |
 | Robot and safety state | system | M3 | read-only context for intent generation |
 
@@ -86,7 +87,7 @@ What the system layer must do with learning intent:
 | Stage | Evidence |
 |---|---|
 | v0.1.0 admission | `python3 -m pytest -q tests`; `bash scripts/check_repo_gate.sh` |
-| M1 dataset gate | validator tests plus accepted/rejected dataset records |
+| M1 dataset gate | `evidence/20261126_m1/`; 61 tests; synthetic/pusht/SO-101 records |
 | M2 training | reproducible run record and hashed artifact |
 | M3 mock integration | rejection, stale-input and deadman scenarios |
 | M4 hardware | separately authorized L5 session with system limits active |

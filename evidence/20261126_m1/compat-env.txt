@@ -1,0 +1,13 @@
+python: Python 3.12.3
+lerobot: 0.7.0
+torch: 2.15.0+cpu
+torchvision: 0.29.2+cpu
+torchcodec: 0.17.0+cpu
+av: 15.1.0
+pyarrow: 26.0.1
+numpy: 2.2.6
+Pillow: 13.0.0
+datasets: 5.2.0
+huggingface-hub: 2.4.0
+uv: uv 0.13.8 (x86_64-unknown-linux-gnu)
+lock_sha256: sha256:a866bfd19d1750faba90b51dd0d7b93e2ce720d1f78b66617a9deec54ba013e7

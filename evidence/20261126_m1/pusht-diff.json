@@ -1,0 +1,10 @@
+{
+  "action_max_abs_diff": 0.0,
+  "dataset": "lerobot/pusht",
+  "episodes": 206,
+  "frames": 25650,
+  "result": "pass",
+  "revision": "7628202a2180972f291ba1bc6723834921e72c19",
+  "schema": "jcheng.m1.import-diff.v1",
+  "state_max_abs_diff": 0.0
+}
