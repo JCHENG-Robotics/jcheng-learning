@@ -1,12 +1,12 @@
 # jcheng-learning
 
-[简体中文](README.zh-CN.md) | **English**
+**English** | [简体中文](README.zh-CN.md)
 
 > Status: **Experimental** as of 2026-11-26. Version 0.1.0.
 > Offline-first scaffold: the repository defines the dataset, training and
 > policy-artifact boundaries, but contains no runtime node, no policy and no
 > hardware access. Nothing in it is used by the running robot.
-> English canonical; see [README.zh-CN.md](README.zh-CN.md) for the Chinese translation.
+> English canonical; the Chinese README is a translation.
 
 `jcheng-learning` is the L3 learning capability of the JCHENG ecosystem. Its
 charter is to turn recorded robot episodes into versioned datasets, train and
