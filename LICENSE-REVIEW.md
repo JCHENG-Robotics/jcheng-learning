@@ -10,8 +10,8 @@
 | Item | Fact |
 |---|---|
 | `LICENSE` file | none |
-| Code in v0.1.0 | documentation, tests and a shell gate; no runtime code |
-| Runtime dependencies | none in v0.1.0 |
+| Code in v0.2.0 | offline Python package, tests, profiles and a shell gate; no runtime node |
+| Runtime dependencies | `PyYAML`, `pyarrow`, `numpy`, `Pillow`, `jsonschema`, `huggingface_hub`; optional `av` and `lerobot[dataset]` |
 | Test dependencies | `pytest` (MIT), `PyYAML` (MIT) — CI only |
 | Datasets | outside the repository; each carries its own license |
 | Model artifacts | outside the repository (`/opt/jcheng/models/`); each carries its own license and provenance |
@@ -24,7 +24,7 @@ review closes. Adding MIT now would pre-empt the organization decision and
 would suggest the eventual license covers datasets and model artifacts, which
 it will not.
 
-The review must decide before the ecosystem reaches v1.0:
+The review must decide before the ecosystem reaches v1.0 (M1 adds the offline dependency set above):
 
 1. The copyright holder and year for new repositories.
 2. Whether MIT is the intended license for capability repositories.
@@ -37,9 +37,17 @@ The review must decide before the ecosystem reaches v1.0:
 | Dependency | Use | Known/probable license | Risk |
 |---|---|---|---|
 | Python standard library | code | PSF | Low |
-| pytest | tests only | MIT | Low |
-| PyYAML | manifest parsing | MIT | Low |
-| ROS 2 Humble | M3 runtime | Apache-2.0 | Low; keep notices |
+| PyYAML 6.0.2 | manifest/profile parsing | MIT | Low |
+| pyarrow 24.0.0 | Parquet read/write | Apache-2.0 | Low; keep notices |
+| numpy 2.2.6 | statistics | BSD-3-Clause | Low |
+| Pillow 13.0.0 | PNG encode/decode | HPND | Low |
+| jsonschema 4.26.0 | report/schema validation | MIT | Low |
+| huggingface_hub 2.4.0 | public dataset download, revision pin | Apache-2.0 | Low |
+| av 15.1.0 (extra) | AV1/MP4 decode | BSD-3-Clause | Low; FFmpeg build terms apply |
+| lerobot[dataset] 0.7.0 (extra) | official writer / compatibility oracle | Apache-2.0 | Keep notices; pulls torch |
+| torch 2.15 (extra) | LeRobot runtime | BSD-3-Clause | Large; optional only |
+| pytest / pytest-cov | tests only | MIT | Low |
+| ROS 2 Humble | M3 runtime | Apache-2.0 | Not used in M1 |
 | Training framework (TBD) | M2 offline | TBD | Decide before adoption |
 | Datasets | M1/M2 | per dataset | Must be recorded per dataset |
 | Model weights | M2/M3 | per artifact | Must not enter git |

@@ -1,0 +1,859 @@
+{
+  "checks": [
+    {
+      "counts": {},
+      "id": "DQ-I01",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I02",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I03",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I04",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I05",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I06",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I07",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I08",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-I09",
+      "message": "native images; no video",
+      "samples": [],
+      "severity": "error",
+      "status": "skip"
+    },
+    {
+      "counts": {},
+      "id": "DQ-J01",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 50
+      },
+      "id": "DQ-J02",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-J03",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 50
+      },
+      "id": "DQ-J04",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 50
+      },
+      "id": "DQ-J05",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 50
+      },
+      "id": "DQ-J06",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 50
+      },
+      "id": "DQ-J07",
+      "message": "gripper range is unknown",
+      "samples": [],
+      "severity": "error",
+      "status": "inconclusive"
+    },
+    {
+      "counts": {
+        "occurrences": 50
+      },
+      "id": "DQ-J08",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 50
+      },
+      "id": "DQ-J09",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-M01",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-M02",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-M03",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-M04",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-M05",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "episodes": 50,
+        "frames": 11939
+      },
+      "id": "DQ-M06",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-M07",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-M08",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-P01",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-P02",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "entries": 1
+      },
+      "id": "DQ-P03",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-P04",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-P05",
+      "message": "not own-real",
+      "samples": [],
+      "severity": "error",
+      "status": "skip"
+    },
+    {
+      "counts": {},
+      "id": "DQ-P06",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-P07",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-T01",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-T02",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-T03",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "max_jitter_ms": 0.023527999999999983,
+        "occurrences": 50
+      },
+      "id": "DQ-T04",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-T05",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-T06",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 50
+      },
+      "id": "DQ-T07",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 50
+      },
+      "id": "DQ-T08",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-V01",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-V02",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-V03",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-V04",
+      "message": "no velocity feature in v1",
+      "samples": [],
+      "severity": "warning",
+      "status": "skip"
+    },
+    {
+      "counts": {},
+      "id": "DQ-V05",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-V06",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-X01",
+      "message": "no split declaration in v1",
+      "samples": [],
+      "severity": "error",
+      "status": "skip"
+    },
+    {
+      "counts": {},
+      "id": "DQ-X02",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {},
+      "id": "DQ-X03",
+      "message": "no declared aggregate stats in v1",
+      "samples": [],
+      "severity": "error",
+      "status": "skip"
+    },
+    {
+      "counts": {},
+      "id": "DQ-X04",
+      "message": "export round-trip is a separate check",
+      "samples": [],
+      "severity": "error",
+      "status": "skip"
+    },
+    {
+      "counts": {
+        "occurrences": 50
+      },
+      "id": "DQ-X05",
+      "message": "",
+      "samples": [],
+      "severity": "warning",
+      "status": "pass"
+    },
+    {
+      "counts": {
+        "occurrences": 50
+      },
+      "id": "DQ-X06",
+      "message": "",
+      "samples": [],
+      "severity": "error",
+      "status": "pass"
+    }
+  ],
+  "dataset": {
+    "id": "public-so101_follower-f641879e2217",
+    "profile_id": "so101_follower",
+    "profile_sha256": "sha256:171cf265b28f5f6fd9156b66b4fdee24a981f6525b0e07169f61f5f8246a93d6",
+    "root_sha256": "sha256:f0b5eea6640e660e56244dc8e23c09f62e22dc45c0fb03b52d57402efe796c71",
+    "source_class": "public-real"
+  },
+  "episodes": [
+    {
+      "digest": "98ec408d273395280fa20439cb784b172a60019899809e842768c15beba74536",
+      "duration_s": 10.1,
+      "frames": 303,
+      "id": "ep_0000",
+      "images": 0
+    },
+    {
+      "digest": "113e10cd86abf2b39588d88369cd2527b84d23d933e1a9126cfd576973362ea8",
+      "duration_s": 8.866666666666667,
+      "frames": 266,
+      "id": "ep_0001",
+      "images": 0
+    },
+    {
+      "digest": "92688a577d8e6d50122998432b930126a08455b13fc5034563d9093fb13f05f6",
+      "duration_s": 7.666666666666667,
+      "frames": 230,
+      "id": "ep_0002",
+      "images": 0
+    },
+    {
+      "digest": "4d6a186b94d92fd9b2ba4d78f91139ccc23ea949d20f21f207ef605a749acb77",
+      "duration_s": 6.1,
+      "frames": 183,
+      "id": "ep_0003",
+      "images": 0
+    },
+    {
+      "digest": "5b6f154b759218199c4c16ea1f7205d48ee4eec4fbfb5950e8cc740589e45c40",
+      "duration_s": 7.166666666666667,
+      "frames": 215,
+      "id": "ep_0004",
+      "images": 0
+    },
+    {
+      "digest": "d525cf028cb1821d68a91c8286e38a088e6026cc39116fd9f2b1c4f738ddfd38",
+      "duration_s": 7.7,
+      "frames": 231,
+      "id": "ep_0005",
+      "images": 0
+    },
+    {
+      "digest": "70fe78b4f64bc488f75dc19ab48d8d29d746c49074f4593b07413b90e406759f",
+      "duration_s": 7.466666666666667,
+      "frames": 224,
+      "id": "ep_0006",
+      "images": 0
+    },
+    {
+      "digest": "de653a572f08ab37664e35bdcfe45f0f91f303380e7489b18a772b191895b743",
+      "duration_s": 6.766666666666667,
+      "frames": 203,
+      "id": "ep_0007",
+      "images": 0
+    },
+    {
+      "digest": "420a32e4e4e51cf0b273b621ec60eeaa1da58835205226d503b02c4a6387522b",
+      "duration_s": 7.533333333333333,
+      "frames": 226,
+      "id": "ep_0008",
+      "images": 0
+    },
+    {
+      "digest": "195755ed64b3a60f67977d024e2a60a54881c1e9a468181dd6f3390f2a46c46a",
+      "duration_s": 6.8,
+      "frames": 204,
+      "id": "ep_0009",
+      "images": 0
+    },
+    {
+      "digest": "cfdb7bb3c51e48e6b251f313262675d5e177f6fc7643289d5800c4e00a05198b",
+      "duration_s": 7.2,
+      "frames": 216,
+      "id": "ep_0010",
+      "images": 0
+    },
+    {
+      "digest": "b47153134792f3f5ec26e9ea4bffa6ce9f04fb821069338cb80263efbe6e3549",
+      "duration_s": 6.7,
+      "frames": 201,
+      "id": "ep_0011",
+      "images": 0
+    },
+    {
+      "digest": "a41cf24dbf74eaafefa35486301a43807386e76e7556264856ccd495ff207090",
+      "duration_s": 7.0,
+      "frames": 210,
+      "id": "ep_0012",
+      "images": 0
+    },
+    {
+      "digest": "118fc4cd67e639752662b1d688425dc8cbe6fd70922c389f83340a28e28a216c",
+      "duration_s": 7.7,
+      "frames": 231,
+      "id": "ep_0013",
+      "images": 0
+    },
+    {
+      "digest": "66d60691070f86aaca2366ca6b1f23b03129ee90d2f483e90358eba3754f36b9",
+      "duration_s": 7.433333333333334,
+      "frames": 223,
+      "id": "ep_0014",
+      "images": 0
+    },
+    {
+      "digest": "1fecd3b2f8c7248e2e5220199dc01a5d719a7f2a92c55d087b5c92c9e14f0e74",
+      "duration_s": 7.533333333333333,
+      "frames": 226,
+      "id": "ep_0015",
+      "images": 0
+    },
+    {
+      "digest": "12d2e83a1e80b779fdbb350f2aa1aa018a3b5948289405013e5ceff29a93629f",
+      "duration_s": 6.7,
+      "frames": 201,
+      "id": "ep_0016",
+      "images": 0
+    },
+    {
+      "digest": "7c2b0359070dec4f9d56722e1af2842441ba3159205013c728e1032964274cab",
+      "duration_s": 8.1,
+      "frames": 243,
+      "id": "ep_0017",
+      "images": 0
+    },
+    {
+      "digest": "31634800095c29a0bc38cdc582a2152238e9ee5825d020d559b758a35127e71a",
+      "duration_s": 7.133333333333334,
+      "frames": 214,
+      "id": "ep_0018",
+      "images": 0
+    },
+    {
+      "digest": "98e5f83ac31e479e8815a4a0cc8e28df97b854e863a3df80ecc31e0c66446f5a",
+      "duration_s": 7.0,
+      "frames": 210,
+      "id": "ep_0019",
+      "images": 0
+    },
+    {
+      "digest": "fa7baaeb4c202cd084014307fd40d56d9e10701ef97ac8344dafd2d999e97463",
+      "duration_s": 8.1,
+      "frames": 243,
+      "id": "ep_0020",
+      "images": 0
+    },
+    {
+      "digest": "b6aca0d36f863f46b54c02374f0d3942fd24f1c3384c615d1856162b9645ee97",
+      "duration_s": 7.466666666666667,
+      "frames": 224,
+      "id": "ep_0021",
+      "images": 0
+    },
+    {
+      "digest": "3c688efa04d469c236b3a3149b0192a8510a62c2f07d9a30b758a96c00e34a82",
+      "duration_s": 7.9,
+      "frames": 237,
+      "id": "ep_0022",
+      "images": 0
+    },
+    {
+      "digest": "fe833327e8ca06d2d0f7db6be4a0c977cc99f7f7eba29884b39cd7b50a75abef",
+      "duration_s": 7.033333333333333,
+      "frames": 211,
+      "id": "ep_0023",
+      "images": 0
+    },
+    {
+      "digest": "543a1424173ffbc8329db128095d9e235cf0541f34da261b61975775af574775",
+      "duration_s": 7.433333333333334,
+      "frames": 223,
+      "id": "ep_0024",
+      "images": 0
+    },
+    {
+      "digest": "1bd9f5033556224e54be7ce777f064c099ba1305e5a0b160c47b30e48cde4a8a",
+      "duration_s": 7.333333333333333,
+      "frames": 220,
+      "id": "ep_0025",
+      "images": 0
+    },
+    {
+      "digest": "13ffb4fd304bb3bf1e2385aa8d102308998bcd64956b50ca174918d8241d6082",
+      "duration_s": 6.633333333333334,
+      "frames": 199,
+      "id": "ep_0026",
+      "images": 0
+    },
+    {
+      "digest": "509b0dd2c1d1be90a7a7327130bd510d51b1bd0db5e622a1e93dbecf9a597a79",
+      "duration_s": 6.766666666666667,
+      "frames": 203,
+      "id": "ep_0027",
+      "images": 0
+    },
+    {
+      "digest": "555f14ba46274c7487c06a14acdfe63f99b6eb9eda8deac246c29fc94c75e5ec",
+      "duration_s": 7.466666666666667,
+      "frames": 224,
+      "id": "ep_0028",
+      "images": 0
+    },
+    {
+      "digest": "304a3ce85834414a0d8a9e9a79f6d82f4173a260a3ad7453196e8b33e47f3ac3",
+      "duration_s": 7.433333333333334,
+      "frames": 223,
+      "id": "ep_0029",
+      "images": 0
+    },
+    {
+      "digest": "928f5737f5a1a593541c8e2884e670941211d9a5b8894022043b77b59026fbfe",
+      "duration_s": 9.6,
+      "frames": 288,
+      "id": "ep_0030",
+      "images": 0
+    },
+    {
+      "digest": "39cc2339b22645f27fc65fc7ef7cd76ca133eff36d0235970428e88117b9bfb5",
+      "duration_s": 9.066666666666666,
+      "frames": 272,
+      "id": "ep_0031",
+      "images": 0
+    },
+    {
+      "digest": "0eaae20ce6894a8d3d2794f5e2227b21d20cc4a43c9e7f0843aee1669a26d817",
+      "duration_s": 9.0,
+      "frames": 270,
+      "id": "ep_0032",
+      "images": 0
+    },
+    {
+      "digest": "75198340f08f835aebf48e0c5a068c1a48c19d79886190af917ef473f42b288b",
+      "duration_s": 7.966666666666667,
+      "frames": 239,
+      "id": "ep_0033",
+      "images": 0
+    },
+    {
+      "digest": "1328c96392620f65d5d864f4e92a4bb7cfb606331631bd3e847fa0fedc0f5c03",
+      "duration_s": 6.9,
+      "frames": 207,
+      "id": "ep_0034",
+      "images": 0
+    },
+    {
+      "digest": "ed7bbcf5b900ba05ef019a4f265eae4e73959d3ac92bf30c4583d0bfb7a9efae",
+      "duration_s": 8.733333333333333,
+      "frames": 262,
+      "id": "ep_0035",
+      "images": 0
+    },
+    {
+      "digest": "1372a7bff16f8f17c94c29b44318694c0b1e7acefdfaaf5e4074ab6a50b2597f",
+      "duration_s": 8.466666666666667,
+      "frames": 254,
+      "id": "ep_0036",
+      "images": 0
+    },
+    {
+      "digest": "70ec2ba40849a819afe55203082f19a6e70efeaff223c50ab1f94ece764d8758",
+      "duration_s": 7.566666666666666,
+      "frames": 227,
+      "id": "ep_0037",
+      "images": 0
+    },
+    {
+      "digest": "e8c5717821431ad25cc851064862b2ad61d12067b4c299708c79c5d98444446e",
+      "duration_s": 8.533333333333333,
+      "frames": 256,
+      "id": "ep_0038",
+      "images": 0
+    },
+    {
+      "digest": "c86d7354279776a6c6a0d742d1559aaa2321ca8762d49be8ec5c53bb6ba93dd5",
+      "duration_s": 7.933333333333334,
+      "frames": 238,
+      "id": "ep_0039",
+      "images": 0
+    },
+    {
+      "digest": "80a0c3849c8072601e310aaff7559004b7353f04b0cfad0aef53d6506f2c685b",
+      "duration_s": 9.766666666666667,
+      "frames": 293,
+      "id": "ep_0040",
+      "images": 0
+    },
+    {
+      "digest": "fba05c21794f1cdd65237a77043f44cda54c11809cf24b2ec0befde05119ea5b",
+      "duration_s": 10.2,
+      "frames": 306,
+      "id": "ep_0041",
+      "images": 0
+    },
+    {
+      "digest": "0d532cc8f32e214f30313fff1b724ef1feaa22f423843ad044d9cee5fbdd38ce",
+      "duration_s": 8.766666666666667,
+      "frames": 263,
+      "id": "ep_0042",
+      "images": 0
+    },
+    {
+      "digest": "e5619e9265e62efe5f3ff4d0df9530fa34e94cc29de5c78a55c483b4c7a08396",
+      "duration_s": 9.366666666666667,
+      "frames": 281,
+      "id": "ep_0043",
+      "images": 0
+    },
+    {
+      "digest": "45d0fae44ff6ce11bff19552aeabb12ff057dcf9083e0e60c8f0ab4e47075358",
+      "duration_s": 8.7,
+      "frames": 261,
+      "id": "ep_0044",
+      "images": 0
+    },
+    {
+      "digest": "90ea918a8d0ac16314c1a6a4b1eaa2b4f967fc0004d4d418e044a27f6a1a9540",
+      "duration_s": 8.333333333333334,
+      "frames": 250,
+      "id": "ep_0045",
+      "images": 0
+    },
+    {
+      "digest": "cd4ea67f6dd91e1843d35cebe4c4b807acbb273288cc3934530dd7beda2af3dd",
+      "duration_s": 10.1,
+      "frames": 303,
+      "id": "ep_0046",
+      "images": 0
+    },
+    {
+      "digest": "4a23dde7603dfa0a81c947336b6eb33dde4356fae67f977027ef39c0859eb818",
+      "duration_s": 8.633333333333333,
+      "frames": 259,
+      "id": "ep_0047",
+      "images": 0
+    },
+    {
+      "digest": "b62570a83aa7e9bfa2c58f201a086661460ba3dd85accc9270bad9c218936e63",
+      "duration_s": 9.066666666666666,
+      "frames": 272,
+      "id": "ep_0048",
+      "images": 0
+    },
+    {
+      "digest": "fbf1da2592308b96f26deb3d4a5c9c02945197be8f2efee43002051cb037154a",
+      "duration_s": 9.033333333333333,
+      "frames": 271,
+      "id": "ep_0049",
+      "images": 0
+    }
+  ],
+  "features": {
+    "action": {
+      "count": 71634,
+      "max": 100.0,
+      "mean": 6.654205997265824,
+      "min": -100.0,
+      "q01": -99.3263168334961,
+      "q99": 99.6358642578125,
+      "std": 57.16350980877398
+    },
+    "observation.state": {
+      "count": 71634,
+      "max": 99.37248229980469,
+      "mean": 7.2514032791011,
+      "min": -98.91122436523438,
+      "q01": -98.74372100830078,
+      "q99": 99.19318389892578,
+      "std": 57.19352407823294
+    }
+  },
+  "limitations": [],
+  "run": {
+    "deterministic": true,
+    "duration_s": 0.303,
+    "started_at": "2026-11-26T06:18:12.524508+00:00"
+  },
+  "schema": "jcheng.dataset-quality-report.v1",
+  "summary": {
+    "checks": 53,
+    "errors": 0,
+    "inconclusive": 1,
+    "result": "inconclusive",
+    "skipped": 6,
+    "usable_for_training": false,
+    "warnings": 0
+  },
+  "tool": {
+    "git_commit": "d15c13cbd67e105cac078f75d0e9b2ddb74e2717",
+    "lock_sha256": "sha256:a866bfd19d1750faba90b51dd0d7b93e2ce720d1f78b66617a9deec54ba013e7",
+    "name": "jcheng-dataset",
+    "version": "0.2.0"
+  }
+}

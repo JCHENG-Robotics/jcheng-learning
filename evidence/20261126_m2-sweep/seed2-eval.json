@@ -1,0 +1,48 @@
+{
+  "checkpoint": "/opt/jcheng/models/m2-sweep-20261126/seed2/checkpoints/000020/pretrained_model",
+  "date": "2026-11-26T07:21:36.365195+00:00",
+  "limitations": [
+    "Teacher-forced offline action error; not closed-loop control.",
+    "No success rate, no hardware and no safety claim.",
+    "Synthetic training dataset; this is a pipeline rehearsal, not a useful policy."
+  ],
+  "metrics": {
+    "action_dim": 6,
+    "action_mae": 0.48115594560001046,
+    "action_rmse": 0.6329426825046539,
+    "chunk_size": 50,
+    "n_samples": 10,
+    "per_dim_mae": [
+      0.517935186624527,
+      0.25852689146995544,
+      0.25579210072755815,
+      0.4476406455039978,
+      0.4561795234680176,
+      0.9508612513542175
+    ]
+  },
+  "schema": "jcheng.m2.eval.v1",
+  "seed": 0,
+  "tool": {
+    "jcheng_learning": "0.2.0",
+    "lerobot": "0.7.0",
+    "python": "3.12.3",
+    "torch": "2.15.0"
+  },
+  "val_dataset": {
+    "features": [
+      "action",
+      "episode_index",
+      "frame_index",
+      "index",
+      "observation.images.external",
+      "observation.images.wrist",
+      "observation.state",
+      "task_index",
+      "timestamp"
+    ],
+    "fps": 10,
+    "info_sha256": "1f0429e20a4d13df1af5728c1623b71436c19663a23def1749823cbfaa107f6a",
+    "root": "/tmp/m2-rehearsal-data/lerobot-val"
+  }
+}

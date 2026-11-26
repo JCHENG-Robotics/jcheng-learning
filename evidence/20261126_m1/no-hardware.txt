@@ -1,0 +1,10 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.3.4, pluggy-1.7.0
+rootdir: /home/jerichocheng/jcheng/jcheng-learning
+configfile: pyproject.toml
+plugins: cov-4.1.0, anyio-4.16.0
+collected 4 items
+
+tests/test_no_hardware.py ....                                           [100%]
+
+============================== 4 passed in 0.05s ===============================

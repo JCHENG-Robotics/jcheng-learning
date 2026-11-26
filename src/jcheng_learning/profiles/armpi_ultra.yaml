@@ -1,0 +1,63 @@
+schema: jcheng.learning.robot_adapter.v1
+id: armpi_ultra
+version: "1.0.0"
+display_name: ArmPi Ultra
+
+has_gripper: true
+dof: 5
+joints:
+  - {name: joint1, index: 0, type: revolute, unit: rad, lower: -1.8012, upper: 1.8012, role: shoulder_pan}
+  - {name: joint2, index: 1, type: revolute, unit: rad, lower: -0.6618, upper: 1.1519, role: shoulder_lift}
+  - {name: joint3, index: 2, type: revolute, unit: rad, lower: -1.8012, upper: 0.0,    role: elbow}
+  - {name: joint4, index: 3, type: revolute, unit: rad, lower: -1.5917, upper: 1.5917, role: wrist_pitch}
+  - {name: joint5, index: 4, type: revolute, unit: rad, lower: -1.5917, upper: 1.5499, role: wrist_roll}
+
+gripper:
+  name: r_joint
+  index: 5
+  type: revolute
+  unit: rad
+  space: canonical
+  closed: 0.0
+  open: 2.22
+  max_velocity_rad_s: 1.0
+  raw_space:
+    name: r_joint
+    lower: -2.22
+    upper: 0.0
+    direction: increasing_closes
+
+state_spaces:
+  - id: armpi_ultra.joint_state.v1
+    names: [joint1, joint2, joint3, joint4, joint5, r_joint]
+    units: [rad, rad, rad, rad, rad, rad]
+    gripper: {name: r_joint, space: canonical}
+    truth_allowed: [measured, commanded]
+  - id: armpi_ultra.raw_joint_state.v1
+    names: [joint1, joint2, joint3, joint4, joint5, r_joint]
+    units: [rad, rad, rad, rad, rad, rad]
+    gripper: {name: r_joint, space: raw_joint}
+    truth_allowed: [commanded]
+
+action_spaces:
+  - id: armpi_ultra.joint_position_absolute.v1
+    kind: joint_position_absolute
+    names: [joint1, joint2, joint3, joint4, joint5, r_joint]
+    units: [rad, rad, rad, rad, rad, rad]
+    gripper: {name: r_joint, space: canonical}
+    limits_known: true
+  - id: armpi_ultra.raw_joint.v1
+    kind: joint_position_absolute
+    names: [joint1, joint2, joint3, joint4, joint5, r_joint]
+    units: [rad, rad, rad, rad, rad, rad]
+    gripper: {name: r_joint, space: raw_joint}
+    limits_known: true
+
+cameras:
+  - {key: external, role: external, required: true, width: 640, height: 480, rate_hz: 8.0, frame_id: camera_color_optical_frame}
+  - {key: wrist, role: wrist, required: false, width: 640, height: 400, rate_hz: 12.0, frame_id: camera_optical_measured}
+
+capabilities:
+  mobile_base: false
+  can_lift: false
+  max_payload_kg: null

@@ -87,8 +87,21 @@ def test_document_set_exists():
         "docs/ARCHITECTURE.md",
         "docs/DATA.md",
         "docs/INTEGRATION.md",
+        "docs/m1/00-INDEX.md",
+        "docs/m1/04-DATA-CONTRACT.md",
+        "docs/m2/00-PLAN.md",
+        "docs/m2/EVAL.md",
+        "docs/m2/BENCHMARK-PROPOSAL.md",
+        "docs/m2/suites/m2-rehearsal-action-error-v1.yaml",
+        "docs/m2/suites/m2-action-error-v1.yaml",
+        "pyproject.toml",
+        "uv.lock",
         "scripts/check_repo_gate.sh",
         "evidence/20261126_scaffold/README.md",
+        "evidence/20261126_m1/README.md",
+        "evidence/20261126_m2-rehearsal/README.md",
+        "evidence/20261126_m2-sweep/README.md",
+        "evidence/20261126_m2-gradaccum/README.md",
     ):
         assert (ROOT / name).is_file(), f"missing {name}"
 

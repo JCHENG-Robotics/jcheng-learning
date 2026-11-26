@@ -1,0 +1,567 @@
+Loading  HuggingFaceTB/SmolVLM2-500M-Video-Instruct weights ...
+Reducing the number of VLM layers to 16 ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+INFO 2026-11-26 17:08:52 ot_train.py:565 {'accelerator': {'activation_checkpointing': {'mode': <ActivationCheckpointingMode.NONE: 'none'>},
+                 'compile': {'backend': 'inductor',
+                             'enabled': False,
+                             'mode': None,
+                             'regional': True},
+                 'ddp': {'find_unused_parameters': True,
+                         'gradient_as_bucket_view': False,
+                         'static_graph': False},
+                 'fsdp': {'cpu_offload': False,
+                          'ignored_modules': None,
+                          'min_num_params': None,
+                          'mixed_precision_policy': {'cast_forward_inputs': True,
+                                                     'output_dtype': None,
+                                                     'param_dtype': None,
+                                                     'reduce_dtype': None},
+                          'reshard_after_forward': True,
+                          'wrap_modules': None},
+                 'grad_scaler': {'backoff_factor': 0.5,
+                                 'growth_factor': 2.0,
+                                 'growth_interval': 2000,
+                                 'init_scale': 65536.0},
+                 'gradient_accumulation': {'steps': 8,
+                                           'sync_each_batch': False},
+                 'init_process_group': {'backend': 'nccl',
+                                        'init_method': None,
+                                        'timeout': None},
+                 'mixed_precision': 'no'},
+ 'batch_size': 8,
+ 'checkpoint_format': <CheckpointFormat.SAFETENSORS: 'safetensors'>,
+ 'checkpoint_path': None,
+ 'cudnn_deterministic': False,
+ 'dataloader_multiprocessing_context': 'spawn',
+ 'dataset': {'depth_output_unit': 'mm',
+             'episodes': None,
+             'eval_split': 0.0,
+             'exclude_episodes': None,
+             'image_transforms': {'backend': 'dataloader',
+                                  'enable': False,
+                                  'gpu_chunk_size': 32,
+                                  'gpu_compile': True,
+                                  'max_num_transforms': 3,
+                                  'random_order': False,
+                                  'tfs': {'affine': {'kwargs': {'degrees': [-5.0,
+                                                                            5.0],
+                                                                'translate': [0.05,
+                                                                              0.05]},
+                                                     'type': 'RandomAffine',
+                                                     'weight': 1.0},
+                                          'brightness': {'kwargs': {'brightness': [0.8,
+                                                                                   1.2]},
+                                                         'type': 'ColorJitter',
+                                                         'weight': 1.0},
+                                          'contrast': {'kwargs': {'contrast': [0.8,
+                                                                               1.2]},
+                                                       'type': 'ColorJitter',
+                                                       'weight': 1.0},
+                                          'hue': {'kwargs': {'hue': [-0.05,
+                                                                     0.05]},
+                                                  'type': 'ColorJitter',
+                                                  'weight': 1.0},
+                                          'saturation': {'kwargs': {'saturation': [0.5,
+                                                                                   1.5]},
+                                                         'type': 'ColorJitter',
+                                                         'weight': 1.0},
+                                          'sharpness': {'kwargs': {'sharpness': [0.5,
+                                                                                 1.5]},
+                                                        'type': 'SharpnessJitter',
+                                                        'weight': 1.0}}},
+             'repo_id': 'local/synthetic-armpi_ultra-000003e9',
+             'repo_type': 'dataset',
+             'return_uint8': False,
+             'revision': None,
+             'root': '/tmp/m2-rehearsal-data/lerobot-train',
+             'streaming': False,
+             'streaming_byte_budget_gb': 8.0,
+             'streaming_decode_threads': 2,
+             'streaming_decoded_queue_size': 8,
+             'streaming_episode_pool_size': None,
+             'streaming_native_http_connections': None,
+             'streaming_native_http_subranges': 1,
+             'streaming_prefetch_episodes': 8,
+             'streaming_sampling_strategy': <StreamingSamplingStrategy.REMAINING: 'remaining'>,
+             'streaming_sidecar_lock_timeout_s': 1800,
+             'use_imagenet_stats': True,
+             'video_backend': 'torchcodec',
+             'video_decoder_cache_size': None},
+ 'ema': None,
+ 'env': None,
+ 'env_eval_freq': 20000,
+ 'eval': {'batch_size': 11,
+          'max_episode_steps': None,
+          'n_episodes': 50,
+          'recording': False,
+          'recording_private': False,
+          'recording_repo_id': None,
+          'use_async_envs': True},
+ 'eval_steps': 0,
+ 'job': {'detach': False,
+         'image': 'huggingface/lerobot-gpu:latest',
+         'tags': [],
+         'target': None,
+         'timeout': '2d'},
+ 'job_name': 'm2-rehearsal',
+ 'log_freq': 1,
+ 'max_eval_samples': 0,
+ 'num_workers': 0,
+ 'optimizer': {'betas': [0.9, 0.95],
+               'eps': 1e-08,
+               'fused': None,
+               'grad_clip_norm': 10.0,
+               'lr': 0.0001,
+               'type': 'adamw',
+               'weight_decay': 1e-10},
+ 'output_dir': '/opt/jcheng/models/m2-gradaccum-20261126',
+ 'parallelism': {'cfg_parallel': 1,
+                 'context_parallel': {'ring_degree': 1, 'ulysses_degree': 1},
+                 'dp_replicate': 1,
+                 'dp_shard': 1},
+ 'peft': None,
+ 'persistent_workers': True,
+ 'policy': {'adapt_to_pi_aloha': False,
+            'add_image_special_tokens': False,
+            'attention_mode': 'cross_attn',
+            'chunk_size': 50,
+            'compile_mode': 'max-autotune',
+            'compile_model': False,
+            'device': 'cuda',
+            'dtype': None,
+            'empty_cameras': 1,
+            'expert_width_multiplier': 0.75,
+            'freeze_vision_encoder': True,
+            'input_features': {'observation.images.camera1': {'shape': [3,
+                                                                        256,
+                                                                        256],
+                                                              'type': <FeatureType.VISUAL: 'VISUAL'>},
+                               'observation.images.camera2': {'shape': [3,
+                                                                        256,
+                                                                        256],
+                                                              'type': <FeatureType.VISUAL: 'VISUAL'>},
+                               'observation.images.camera3': {'shape': [3,
+                                                                        256,
+                                                                        256],
+                                                              'type': <FeatureType.VISUAL: 'VISUAL'>},
+                               'observation.state': {'shape': [6],
+                                                     'type': <FeatureType.STATE: 'STATE'>}},
+            'license': None,
+            'load_vlm_weights': True,
+            'max_action_dim': 32,
+            'max_period': 4.0,
+            'max_state_dim': 32,
+            'min_period': 0.004,
+            'n_action_steps': 50,
+            'n_obs_steps': 1,
+            'normalization_mapping': {'ACTION': <NormalizationMode.MEAN_STD: 'MEAN_STD'>,
+                                      'STATE': <NormalizationMode.MEAN_STD: 'MEAN_STD'>,
+                                      'VISUAL': <NormalizationMode.IDENTITY: 'IDENTITY'>},
+            'num_expert_layers': 0,
+            'num_steps': 10,
+            'num_vlm_layers': 16,
+            'optimizer_betas': [0.9, 0.95],
+            'optimizer_eps': 1e-08,
+            'optimizer_fused': None,
+            'optimizer_grad_clip_norm': 10.0,
+            'optimizer_lr': 0.0001,
+            'optimizer_weight_decay': 1e-10,
+            'output_features': {'action': {'shape': [6],
+                                           'type': <FeatureType.ACTION: 'ACTION'>}},
+            'pad_language_to': 'max_length',
+            'prefix_length': 0,
+            'pretrained_path': 'lerobot/smolvla_base',
+            'pretrained_revision': None,
+            'private': None,
+            'push_to_hub': False,
+            'repo_id': 'local/m2-rehearsal',
+            'resize_imgs_with_padding': [512, 512],
+            'rtc_config': None,
+            'scheduler_decay_lr': 2.5e-06,
+            'scheduler_decay_steps': 30000,
+            'scheduler_warmup_steps': 1000,
+            'self_attn_every_n_layers': 2,
+            'tags': None,
+            'tokenizer_max_length': 48,
+            'train_expert_only': True,
+            'train_state_proj': True,
+            'type': 'smolvla',
+            'use_amp': False,
+            'use_cache': True,
+            'use_delta_joint_actions_aloha': False,
+            'use_peft': False,
+            'vlm_model_name': 'HuggingFaceTB/SmolVLM2-500M-Video-Instruct'},
+ 'prefetch_factor': 4,
+ 'rename_map': {'observation.images.external': 'observation.images.camera1',
+                'observation.images.wrist': 'observation.images.camera2'},
+ 'resume': False,
+ 'reward_model': None,
+ 'sample_weighting': None,
+ 'save_checkpoint': True,
+ 'save_checkpoint_to_hub': False,
+ 'save_freq': 160,
+ 'scheduler': {'decay_lr': 2.5e-06,
+               'num_decay_steps': 30000,
+               'num_warmup_steps': 1000,
+               'peak_lr': 0.0001,
+               'type': 'cosine_decay_with_warmup'},
+ 'seed': 0,
+ 'steps': 160,
+ 'tf32': True,
+ 'tolerance_s': 0.0001,
+ 'trackio': {'capture_console': True,
+             'disable_artifact': True,
+             'enable': False,
+             'private': None,
+             'project': 'lerobot',
+             'resume': None,
+             'run_name': None,
+             'space_id': None},
+ 'use_policy_training_preset': True}
+INFO 2026-11-26 17:08:52 ot_train.py:572 Logs will be saved locally.
+INFO 2026-11-26 17:08:52 ot_train.py:589 Creating dataset
+INFO 2026-11-26 17:08:52 ot_train.py:628 Creating policy
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading weights:   0%|          | 0/489 [00:00<?, ?it/s]
+Loading weights:  46%|████▌     | 226/489 [00:00<00:00, 2250.59it/s]
+Loading weights: 100%|██████████| 489/489 [00:00<00:00, 2762.14it/s]
+INFO 2026-11-26 17:08:59 ot_train.py:723 Creating optimizer and scheduler
+INFO 2026-11-26 17:08:59 hedulers.py:156 Auto-scaling LR scheduler: num_training_steps (160) < num_decay_steps (30000). Scaling warmup: 1000 → 5, decay: 30000 → 160 (scale factor: 0.005)
+INFO 2026-11-26 17:08:59 ot_train.py:784 Output dir: /opt/jcheng/models/m2-gradaccum-20261126
+INFO 2026-11-26 17:08:59 ot_train.py:791 cfg.steps=160 (160)
+INFO 2026-11-26 17:08:59 ot_train.py:792 dataset.num_frames=240 (240)
+INFO 2026-11-26 17:08:59 ot_train.py:793 dataset.num_episodes=3
+INFO 2026-11-26 17:08:59 ot_train.py:794 Effective batch size: 8 x 1 dp workers x 8 grad accum = 64 (topology: dp_replicate=1, dp_shard=1)
+INFO 2026-11-26 17:08:59 ot_train.py:799 num_learnable_params=99880992 (100M)
+INFO 2026-11-26 17:08:59 ot_train.py:800 num_total_params=450046176 (450M)
+
+Training:   0%|          | 0/160 [00:00<?, ?step/s]INFO 2026-11-26 17:08:59 ot_train.py:848 Start offline training on a fixed dataset, with effective batch size: 64
+/tmp/jcheng-m2-gpu/lib/python3.12/site-packages/accelerate/scheduler.py:57: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  self.scheduler.step(*args, **kwargs)
+
+Training:   1%|          | 1/160 [00:01<03:12,  1.21s/step]INFO 2026-11-26 17:09:00 ot_train.py:894 step:1 smpl:8 ep:0 epch:0.03 loss:4.972 grdn:0.000 lr:3.3e-05 data_s:0.031 prep_s:0.032 updt_s:1.145 step_s:1.209 smp/s:7 mem_gb:3.14 losses_after_forward:3.405 losses_after_in_ep_bound:3.033 losses_after_rm_padding:3.033
+
+Training:   1%|▏         | 2/160 [00:01<02:09,  1.22step/s]INFO 2026-11-26 17:09:01 ot_train.py:894 step:2 smpl:16 ep:0 epch:0.07 loss:3.890 grdn:0.000 lr:5.0e-05 data_s:0.013 prep_s:0.001 updt_s:0.527 step_s:0.542 smp/s:15 mem_gb:3.35 losses_after_forward:3.317 losses_after_in_ep_bound:3.024 losses_after_rm_padding:3.024
+
+Training:   2%|▏         | 3/160 [00:02<01:48,  1.44step/s]INFO 2026-11-26 17:09:02 ot_train.py:894 step:3 smpl:24 ep:0 epch:0.10 loss:3.034 grdn:0.000 lr:6.7e-05 data_s:0.011 prep_s:0.002 updt_s:0.530 step_s:0.544 smp/s:15 mem_gb:3.36 losses_after_forward:2.534 losses_after_in_ep_bound:2.093 losses_after_rm_padding:2.093
+
+Training:   2%|▎         | 4/160 [00:02<01:38,  1.58step/s]INFO 2026-11-26 17:09:02 ot_train.py:894 step:4 smpl:32 ep:0 epch:0.13 loss:2.567 grdn:0.000 lr:8.3e-05 data_s:0.010 prep_s:0.001 updt_s:0.529 step_s:0.540 smp/s:15 mem_gb:3.36 losses_after_forward:2.508 losses_after_in_ep_bound:2.452 losses_after_rm_padding:2.452
+
+Training:   3%|▎         | 5/160 [00:03<01:33,  1.66step/s]INFO 2026-11-26 17:09:03 ot_train.py:894 step:5 smpl:40 ep:0 epch:0.17 loss:2.558 grdn:0.000 lr:1.0e-04 data_s:0.010 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.36 losses_after_forward:2.145 losses_after_in_ep_bound:1.957 losses_after_rm_padding:1.957
+
+Training:   4%|▍         | 6/160 [00:03<01:29,  1.72step/s]INFO 2026-11-26 17:09:03 ot_train.py:894 step:6 smpl:48 ep:1 epch:0.20 loss:2.739 grdn:0.000 lr:1.0e-04 data_s:0.010 prep_s:0.002 updt_s:0.527 step_s:0.539 smp/s:15 mem_gb:3.36 losses_after_forward:2.245 losses_after_in_ep_bound:1.739 losses_after_rm_padding:1.739
+
+Training:   4%|▍         | 7/160 [00:04<01:26,  1.76step/s]INFO 2026-11-26 17:09:04 ot_train.py:894 step:7 smpl:56 ep:1 epch:0.23 loss:3.263 grdn:0.000 lr:1.0e-04 data_s:0.009 prep_s:0.001 updt_s:0.527 step_s:0.538 smp/s:15 mem_gb:3.36 losses_after_forward:2.610 losses_after_in_ep_bound:2.316 losses_after_rm_padding:2.316
+
+Training:   5%|▌         | 8/160 [00:05<01:31,  1.66step/s]INFO 2026-11-26 17:09:04 ot_train.py:894 step:8 smpl:64 ep:1 epch:0.27 loss:4.160 grdn:17.409 lr:9.9e-05 data_s:0.010 prep_s:0.005 updt_s:0.666 step_s:0.682 smp/s:12 mem_gb:3.36 losses_after_forward:3.395 losses_after_in_ep_bound:2.933 losses_after_rm_padding:2.933
+
+Training:   6%|▌         | 9/160 [00:05<01:27,  1.72step/s]INFO 2026-11-26 17:09:05 ot_train.py:894 step:9 smpl:72 ep:1 epch:0.30 loss:1.825 grdn:0.000 lr:9.9e-05 data_s:0.012 prep_s:0.001 updt_s:0.520 step_s:0.534 smp/s:15 mem_gb:3.53 losses_after_forward:1.627 losses_after_in_ep_bound:1.214 losses_after_rm_padding:1.214
+
+Training:   6%|▋         | 10/160 [00:06<01:25,  1.75step/s]INFO 2026-11-26 17:09:06 ot_train.py:894 step:10 smpl:80 ep:1 epch:0.33 loss:1.919 grdn:0.000 lr:9.9e-05 data_s:0.010 prep_s:0.001 updt_s:0.529 step_s:0.541 smp/s:15 mem_gb:3.75 losses_after_forward:1.579 losses_after_in_ep_bound:1.243 losses_after_rm_padding:1.243
+
+Training:   7%|▋         | 11/160 [00:06<01:23,  1.79step/s]INFO 2026-11-26 17:09:06 ot_train.py:894 step:11 smpl:88 ep:1 epch:0.37 loss:1.853 grdn:0.000 lr:9.9e-05 data_s:0.010 prep_s:0.001 updt_s:0.522 step_s:0.534 smp/s:15 mem_gb:3.75 losses_after_forward:1.785 losses_after_in_ep_bound:1.644 losses_after_rm_padding:1.644
+
+Training:   8%|▊         | 12/160 [00:07<01:22,  1.80step/s]INFO 2026-11-26 17:09:07 ot_train.py:894 step:12 smpl:96 ep:1 epch:0.40 loss:1.722 grdn:0.000 lr:9.9e-05 data_s:0.010 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.393 losses_after_in_ep_bound:0.809 losses_after_rm_padding:0.809
+
+Training:   8%|▊         | 13/160 [00:07<01:20,  1.82step/s]INFO 2026-11-26 17:09:07 ot_train.py:894 step:13 smpl:104 ep:1 epch:0.43 loss:1.912 grdn:0.000 lr:9.8e-05 data_s:0.014 prep_s:0.001 updt_s:0.524 step_s:0.541 smp/s:15 mem_gb:3.75 losses_after_forward:1.589 losses_after_in_ep_bound:1.128 losses_after_rm_padding:1.128
+
+Training:   9%|▉         | 14/160 [00:08<01:20,  1.82step/s]INFO 2026-11-26 17:09:08 ot_train.py:894 step:14 smpl:112 ep:1 epch:0.47 loss:1.748 grdn:0.000 lr:9.8e-05 data_s:0.011 prep_s:0.001 updt_s:0.530 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.495 losses_after_in_ep_bound:1.123 losses_after_rm_padding:1.123
+
+Training:   9%|▉         | 15/160 [00:08<01:19,  1.83step/s]INFO 2026-11-26 17:09:08 ot_train.py:894 step:15 smpl:120 ep:2 epch:0.50 loss:1.923 grdn:0.000 lr:9.8e-05 data_s:0.011 prep_s:0.001 updt_s:0.524 step_s:0.537 smp/s:15 mem_gb:3.75 losses_after_forward:1.675 losses_after_in_ep_bound:1.255 losses_after_rm_padding:1.255
+
+Training:  10%|█         | 16/160 [00:09<01:19,  1.82step/s]INFO 2026-11-26 17:09:09 ot_train.py:894 step:16 smpl:128 ep:2 epch:0.53 loss:1.998 grdn:18.026 lr:9.8e-05 data_s:0.009 prep_s:0.001 updt_s:0.545 step_s:0.557 smp/s:14 mem_gb:3.75 losses_after_forward:1.909 losses_after_in_ep_bound:1.808 losses_after_rm_padding:1.808
+
+Training:  11%|█         | 17/160 [00:10<01:17,  1.83step/s]INFO 2026-11-26 17:09:09 ot_train.py:894 step:17 smpl:136 ep:2 epch:0.57 loss:3.083 grdn:0.000 lr:9.7e-05 data_s:0.010 prep_s:0.001 updt_s:0.522 step_s:0.535 smp/s:15 mem_gb:3.53 losses_after_forward:2.970 losses_after_in_ep_bound:1.518 losses_after_rm_padding:1.518
+
+Training:  11%|█▏        | 18/160 [00:10<01:17,  1.84step/s]INFO 2026-11-26 17:09:10 ot_train.py:894 step:18 smpl:144 ep:2 epch:0.60 loss:3.048 grdn:0.000 lr:9.7e-05 data_s:0.010 prep_s:0.002 updt_s:0.527 step_s:0.540 smp/s:15 mem_gb:3.75 losses_after_forward:3.222 losses_after_in_ep_bound:2.118 losses_after_rm_padding:2.118
+
+Training:  12%|█▏        | 19/160 [00:11<01:16,  1.84step/s]INFO 2026-11-26 17:09:10 ot_train.py:894 step:19 smpl:152 ep:2 epch:0.63 loss:3.308 grdn:0.000 lr:9.7e-05 data_s:0.010 prep_s:0.001 updt_s:0.525 step_s:0.538 smp/s:15 mem_gb:3.75 losses_after_forward:3.181 losses_after_in_ep_bound:2.390 losses_after_rm_padding:2.390
+
+Training:  12%|█▎        | 20/160 [00:11<01:15,  1.85step/s]INFO 2026-11-26 17:09:11 ot_train.py:894 step:20 smpl:160 ep:2 epch:0.67 loss:3.199 grdn:0.000 lr:9.6e-05 data_s:0.010 prep_s:0.001 updt_s:0.528 step_s:0.540 smp/s:15 mem_gb:3.75 losses_after_forward:3.259 losses_after_in_ep_bound:1.968 losses_after_rm_padding:1.968
+
+Training:  13%|█▎        | 21/160 [00:12<01:15,  1.85step/s]INFO 2026-11-26 17:09:11 ot_train.py:894 step:21 smpl:168 ep:2 epch:0.70 loss:3.445 grdn:0.000 lr:9.6e-05 data_s:0.010 prep_s:0.001 updt_s:0.525 step_s:0.538 smp/s:15 mem_gb:3.75 losses_after_forward:3.609 losses_after_in_ep_bound:1.723 losses_after_rm_padding:1.723
+
+Training:  14%|█▍        | 22/160 [00:12<01:14,  1.85step/s]INFO 2026-11-26 17:09:12 ot_train.py:894 step:22 smpl:176 ep:2 epch:0.73 loss:2.949 grdn:0.000 lr:9.6e-05 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:2.960 losses_after_in_ep_bound:2.808 losses_after_rm_padding:2.808
+
+Training:  14%|█▍        | 23/160 [00:13<01:14,  1.85step/s]INFO 2026-11-26 17:09:13 ot_train.py:894 step:23 smpl:184 ep:2 epch:0.77 loss:2.981 grdn:0.000 lr:9.5e-05 data_s:0.010 prep_s:0.002 updt_s:0.527 step_s:0.539 smp/s:15 mem_gb:3.75 losses_after_forward:2.921 losses_after_in_ep_bound:2.087 losses_after_rm_padding:2.087
+
+Training:  15%|█▌        | 24/160 [00:13<01:14,  1.83step/s]INFO 2026-11-26 17:09:13 ot_train.py:894 step:24 smpl:192 ep:2 epch:0.80 loss:3.556 grdn:40.792 lr:9.5e-05 data_s:0.010 prep_s:0.001 updt_s:0.546 step_s:0.559 smp/s:14 mem_gb:3.75 losses_after_forward:3.686 losses_after_in_ep_bound:2.658 losses_after_rm_padding:2.658
+
+Training:  16%|█▌        | 25/160 [00:14<01:13,  1.84step/s]INFO 2026-11-26 17:09:14 ot_train.py:894 step:25 smpl:200 ep:2 epch:0.83 loss:2.108 grdn:0.000 lr:9.4e-05 data_s:0.010 prep_s:0.002 updt_s:0.525 step_s:0.538 smp/s:15 mem_gb:3.53 losses_after_forward:2.030 losses_after_in_ep_bound:1.354 losses_after_rm_padding:1.354
+
+Training:  16%|█▋        | 26/160 [00:14<01:12,  1.84step/s]INFO 2026-11-26 17:09:14 ot_train.py:894 step:26 smpl:208 ep:3 epch:0.87 loss:2.061 grdn:0.000 lr:9.4e-05 data_s:0.010 prep_s:0.001 updt_s:0.527 step_s:0.540 smp/s:15 mem_gb:3.75 losses_after_forward:2.132 losses_after_in_ep_bound:1.247 losses_after_rm_padding:1.247
+
+Training:  17%|█▋        | 27/160 [00:15<01:12,  1.85step/s]INFO 2026-11-26 17:09:15 ot_train.py:894 step:27 smpl:216 ep:3 epch:0.90 loss:1.888 grdn:0.000 lr:9.3e-05 data_s:0.009 prep_s:0.001 updt_s:0.527 step_s:0.538 smp/s:15 mem_gb:3.75 losses_after_forward:1.949 losses_after_in_ep_bound:1.553 losses_after_rm_padding:1.553
+
+Training:  18%|█▊        | 28/160 [00:15<01:11,  1.85step/s]INFO 2026-11-26 17:09:15 ot_train.py:894 step:28 smpl:224 ep:3 epch:0.93 loss:1.818 grdn:0.000 lr:9.3e-05 data_s:0.010 prep_s:0.003 updt_s:0.528 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.893 losses_after_in_ep_bound:1.268 losses_after_rm_padding:1.268
+
+Training:  18%|█▊        | 29/160 [00:16<01:11,  1.84step/s]INFO 2026-11-26 17:09:16 ot_train.py:894 step:29 smpl:232 ep:3 epch:0.97 loss:1.992 grdn:0.000 lr:9.2e-05 data_s:0.012 prep_s:0.001 updt_s:0.528 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.963 losses_after_in_ep_bound:1.339 losses_after_rm_padding:1.339
+
+Training:  19%|█▉        | 30/160 [00:17<01:10,  1.85step/s]INFO 2026-11-26 17:09:16 ot_train.py:894 step:30 smpl:240 ep:3 epch:1.00 loss:1.974 grdn:0.000 lr:9.2e-05 data_s:0.001 prep_s:0.001 updt_s:0.530 step_s:0.533 smp/s:15 mem_gb:3.75 losses_after_forward:1.977 losses_after_in_ep_bound:1.263 losses_after_rm_padding:1.263
+
+Training:  19%|█▉        | 31/160 [00:17<01:09,  1.84step/s]INFO 2026-11-26 17:09:17 ot_train.py:894 step:31 smpl:248 ep:3 epch:1.03 loss:2.052 grdn:0.000 lr:9.1e-05 data_s:0.020 prep_s:0.001 updt_s:0.524 step_s:0.547 smp/s:15 mem_gb:3.75 losses_after_forward:2.036 losses_after_in_ep_bound:1.078 losses_after_rm_padding:1.078
+
+Training:  20%|██        | 32/160 [00:18<01:10,  1.83step/s]INFO 2026-11-26 17:09:17 ot_train.py:894 step:32 smpl:256 ep:3 epch:1.07 loss:2.110 grdn:19.873 lr:9.1e-05 data_s:0.010 prep_s:0.001 updt_s:0.545 step_s:0.558 smp/s:14 mem_gb:3.75 losses_after_forward:2.095 losses_after_in_ep_bound:1.319 losses_after_rm_padding:1.319
+
+Training:  21%|██        | 33/160 [00:18<01:09,  1.83step/s]INFO 2026-11-26 17:09:18 ot_train.py:894 step:33 smpl:264 ep:3 epch:1.10 loss:1.557 grdn:0.000 lr:9.0e-05 data_s:0.013 prep_s:0.001 updt_s:0.525 step_s:0.539 smp/s:15 mem_gb:3.53 losses_after_forward:1.519 losses_after_in_ep_bound:1.432 losses_after_rm_padding:1.432
+
+Training:  21%|██▏       | 34/160 [00:19<01:08,  1.84step/s]INFO 2026-11-26 17:09:19 ot_train.py:894 step:34 smpl:272 ep:3 epch:1.13 loss:1.553 grdn:0.000 lr:9.0e-05 data_s:0.011 prep_s:0.001 updt_s:0.527 step_s:0.540 smp/s:15 mem_gb:3.75 losses_after_forward:1.491 losses_after_in_ep_bound:1.230 losses_after_rm_padding:1.230
+
+Training:  22%|██▏       | 35/160 [00:19<01:07,  1.84step/s]INFO 2026-11-26 17:09:19 ot_train.py:894 step:35 smpl:280 ep:4 epch:1.17 loss:1.490 grdn:0.000 lr:8.9e-05 data_s:0.011 prep_s:0.001 updt_s:0.528 step_s:0.541 smp/s:15 mem_gb:3.75 losses_after_forward:1.439 losses_after_in_ep_bound:0.909 losses_after_rm_padding:0.909
+
+Training:  22%|██▎       | 36/160 [00:20<01:07,  1.84step/s]INFO 2026-11-26 17:09:20 ot_train.py:894 step:36 smpl:288 ep:4 epch:1.20 loss:1.391 grdn:0.000 lr:8.8e-05 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.356 losses_after_in_ep_bound:1.029 losses_after_rm_padding:1.029
+
+Training:  23%|██▎       | 37/160 [00:20<01:06,  1.84step/s]INFO 2026-11-26 17:09:20 ot_train.py:894 step:37 smpl:296 ep:4 epch:1.23 loss:1.457 grdn:0.000 lr:8.8e-05 data_s:0.011 prep_s:0.001 updt_s:0.527 step_s:0.541 smp/s:15 mem_gb:3.75 losses_after_forward:1.351 losses_after_in_ep_bound:0.987 losses_after_rm_padding:0.987
+
+Training:  24%|██▍       | 38/160 [00:21<01:06,  1.84step/s]INFO 2026-11-26 17:09:21 ot_train.py:894 step:38 smpl:304 ep:4 epch:1.27 loss:1.577 grdn:0.000 lr:8.7e-05 data_s:0.010 prep_s:0.001 updt_s:0.528 step_s:0.541 smp/s:15 mem_gb:3.75 losses_after_forward:1.461 losses_after_in_ep_bound:1.021 losses_after_rm_padding:1.021
+
+Training:  24%|██▍       | 39/160 [00:21<01:05,  1.85step/s]INFO 2026-11-26 17:09:21 ot_train.py:894 step:39 smpl:312 ep:4 epch:1.30 loss:1.430 grdn:0.000 lr:8.6e-05 data_s:0.010 prep_s:0.002 updt_s:0.528 step_s:0.540 smp/s:15 mem_gb:3.75 losses_after_forward:1.329 losses_after_in_ep_bound:0.740 losses_after_rm_padding:0.740
+
+Training:  25%|██▌       | 40/160 [00:22<01:05,  1.82step/s]INFO 2026-11-26 17:09:22 ot_train.py:894 step:40 smpl:320 ep:4 epch:1.33 loss:1.514 grdn:8.054 lr:8.6e-05 data_s:0.011 prep_s:0.001 updt_s:0.549 step_s:0.562 smp/s:14 mem_gb:3.75 losses_after_forward:1.470 losses_after_in_ep_bound:1.219 losses_after_rm_padding:1.219
+
+Training:  26%|██▌       | 41/160 [00:23<01:04,  1.83step/s]INFO 2026-11-26 17:09:22 ot_train.py:894 step:41 smpl:328 ep:4 epch:1.37 loss:1.476 grdn:0.000 lr:8.5e-05 data_s:0.010 prep_s:0.001 updt_s:0.525 step_s:0.537 smp/s:15 mem_gb:3.53 losses_after_forward:1.183 losses_after_in_ep_bound:0.694 losses_after_rm_padding:0.694
+
+Training:  26%|██▋       | 42/160 [00:23<01:04,  1.84step/s]INFO 2026-11-26 17:09:23 ot_train.py:894 step:42 smpl:336 ep:4 epch:1.40 loss:1.302 grdn:0.000 lr:8.4e-05 data_s:0.011 prep_s:0.002 updt_s:0.528 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.178 losses_after_in_ep_bound:0.823 losses_after_rm_padding:0.823
+
+Training:  27%|██▋       | 43/160 [00:24<01:03,  1.84step/s]INFO 2026-11-26 17:09:23 ot_train.py:894 step:43 smpl:344 ep:4 epch:1.43 loss:1.448 grdn:0.000 lr:8.4e-05 data_s:0.013 prep_s:0.001 updt_s:0.527 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.268 losses_after_in_ep_bound:1.042 losses_after_rm_padding:1.042
+
+Training:  28%|██▊       | 44/160 [00:24<01:03,  1.84step/s]INFO 2026-11-26 17:09:24 ot_train.py:894 step:44 smpl:352 ep:4 epch:1.47 loss:1.522 grdn:0.000 lr:8.3e-05 data_s:0.012 prep_s:0.001 updt_s:0.530 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.332 losses_after_in_ep_bound:1.126 losses_after_rm_padding:1.126
+
+Training:  28%|██▊       | 45/160 [00:25<01:02,  1.84step/s]INFO 2026-11-26 17:09:25 ot_train.py:894 step:45 smpl:360 ep:4 epch:1.50 loss:1.490 grdn:0.000 lr:8.2e-05 data_s:0.010 prep_s:0.001 updt_s:0.526 step_s:0.539 smp/s:15 mem_gb:3.75 losses_after_forward:1.339 losses_after_in_ep_bound:1.017 losses_after_rm_padding:1.017
+
+Training:  29%|██▉       | 46/160 [00:25<01:01,  1.84step/s]INFO 2026-11-26 17:09:25 ot_train.py:894 step:46 smpl:368 ep:5 epch:1.53 loss:1.463 grdn:0.000 lr:8.1e-05 data_s:0.010 prep_s:0.001 updt_s:0.529 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.357 losses_after_in_ep_bound:1.221 losses_after_rm_padding:1.221
+
+Training:  29%|██▉       | 47/160 [00:26<01:01,  1.84step/s]INFO 2026-11-26 17:09:26 ot_train.py:894 step:47 smpl:376 ep:5 epch:1.57 loss:1.574 grdn:0.000 lr:8.1e-05 data_s:0.012 prep_s:0.001 updt_s:0.526 step_s:0.540 smp/s:15 mem_gb:3.75 losses_after_forward:1.447 losses_after_in_ep_bound:1.208 losses_after_rm_padding:1.208
+
+Training:  30%|███       | 48/160 [00:26<01:01,  1.82step/s]INFO 2026-11-26 17:09:26 ot_train.py:894 step:48 smpl:384 ep:5 epch:1.60 loss:1.351 grdn:7.103 lr:8.0e-05 data_s:0.011 prep_s:0.002 updt_s:0.547 step_s:0.560 smp/s:14 mem_gb:3.75 losses_after_forward:1.145 losses_after_in_ep_bound:0.817 losses_after_rm_padding:0.817
+
+Training:  31%|███       | 49/160 [00:27<01:00,  1.83step/s]INFO 2026-11-26 17:09:27 ot_train.py:894 step:49 smpl:392 ep:5 epch:1.63 loss:1.518 grdn:0.000 lr:7.9e-05 data_s:0.012 prep_s:0.002 updt_s:0.526 step_s:0.540 smp/s:15 mem_gb:3.53 losses_after_forward:1.207 losses_after_in_ep_bound:0.740 losses_after_rm_padding:0.740
+
+Training:  31%|███▏      | 50/160 [00:27<01:00,  1.83step/s]INFO 2026-11-26 17:09:27 ot_train.py:894 step:50 smpl:400 ep:5 epch:1.67 loss:1.498 grdn:0.000 lr:7.8e-05 data_s:0.011 prep_s:0.001 updt_s:0.532 step_s:0.546 smp/s:15 mem_gb:3.75 losses_after_forward:1.279 losses_after_in_ep_bound:1.075 losses_after_rm_padding:1.075
+
+Training:  32%|███▏      | 51/160 [00:28<00:59,  1.84step/s]INFO 2026-11-26 17:09:28 ot_train.py:894 step:51 smpl:408 ep:5 epch:1.70 loss:1.551 grdn:0.000 lr:7.8e-05 data_s:0.010 prep_s:0.001 updt_s:0.528 step_s:0.541 smp/s:15 mem_gb:3.75 losses_after_forward:1.238 losses_after_in_ep_bound:0.838 losses_after_rm_padding:0.838
+
+Training:  32%|███▎      | 52/160 [00:29<00:58,  1.84step/s]INFO 2026-11-26 17:09:28 ot_train.py:894 step:52 smpl:416 ep:5 epch:1.73 loss:1.590 grdn:0.000 lr:7.7e-05 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.514 losses_after_in_ep_bound:1.407 losses_after_rm_padding:1.407
+
+Training:  33%|███▎      | 53/160 [00:29<00:58,  1.84step/s]INFO 2026-11-26 17:09:29 ot_train.py:894 step:53 smpl:424 ep:5 epch:1.77 loss:1.542 grdn:0.000 lr:7.6e-05 data_s:0.011 prep_s:0.001 updt_s:0.528 step_s:0.541 smp/s:15 mem_gb:3.75 losses_after_forward:1.294 losses_after_in_ep_bound:0.975 losses_after_rm_padding:0.975
+
+Training:  34%|███▍      | 54/160 [00:30<00:57,  1.84step/s]INFO 2026-11-26 17:09:29 ot_train.py:894 step:54 smpl:432 ep:5 epch:1.80 loss:1.516 grdn:0.000 lr:7.5e-05 data_s:0.011 prep_s:0.002 updt_s:0.529 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.393 losses_after_in_ep_bound:1.160 losses_after_rm_padding:1.160
+
+Training:  34%|███▍      | 55/160 [00:30<00:57,  1.84step/s]INFO 2026-11-26 17:09:30 ot_train.py:894 step:55 smpl:440 ep:6 epch:1.83 loss:1.411 grdn:0.000 lr:7.4e-05 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.294 losses_after_in_ep_bound:1.119 losses_after_rm_padding:1.119
+
+Training:  35%|███▌      | 56/160 [00:31<00:57,  1.82step/s]INFO 2026-11-26 17:09:31 ot_train.py:894 step:56 smpl:448 ep:6 epch:1.87 loss:1.470 grdn:8.279 lr:7.3e-05 data_s:0.010 prep_s:0.001 updt_s:0.547 step_s:0.559 smp/s:14 mem_gb:3.75 losses_after_forward:1.271 losses_after_in_ep_bound:0.764 losses_after_rm_padding:0.764
+
+Training:  36%|███▌      | 57/160 [00:31<00:56,  1.83step/s]INFO 2026-11-26 17:09:31 ot_train.py:894 step:57 smpl:456 ep:6 epch:1.90 loss:1.409 grdn:0.000 lr:7.3e-05 data_s:0.011 prep_s:0.001 updt_s:0.526 step_s:0.540 smp/s:15 mem_gb:3.53 losses_after_forward:1.387 losses_after_in_ep_bound:1.345 losses_after_rm_padding:1.345
+
+Training:  36%|███▋      | 58/160 [00:32<00:55,  1.83step/s]INFO 2026-11-26 17:09:32 ot_train.py:894 step:58 smpl:464 ep:6 epch:1.93 loss:1.522 grdn:0.000 lr:7.2e-05 data_s:0.010 prep_s:0.002 updt_s:0.530 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.418 losses_after_in_ep_bound:1.301 losses_after_rm_padding:1.301
+
+Training:  37%|███▋      | 59/160 [00:32<00:55,  1.84step/s]INFO 2026-11-26 17:09:32 ot_train.py:894 step:59 smpl:472 ep:6 epch:1.97 loss:1.469 grdn:0.000 lr:7.1e-05 data_s:0.011 prep_s:0.001 updt_s:0.530 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.238 losses_after_in_ep_bound:0.966 losses_after_rm_padding:0.966
+
+Training:  38%|███▊      | 60/160 [00:33<00:54,  1.84step/s]INFO 2026-11-26 17:09:33 ot_train.py:894 step:60 smpl:480 ep:6 epch:2.00 loss:1.478 grdn:0.000 lr:7.0e-05 data_s:0.001 prep_s:0.001 updt_s:0.532 step_s:0.535 smp/s:15 mem_gb:3.75 losses_after_forward:1.276 losses_after_in_ep_bound:1.023 losses_after_rm_padding:1.023
+
+Training:  38%|███▊      | 61/160 [00:33<00:53,  1.83step/s]INFO 2026-11-26 17:09:33 ot_train.py:894 step:61 smpl:488 ep:6 epch:2.03 loss:1.477 grdn:0.000 lr:6.9e-05 data_s:0.021 prep_s:0.001 updt_s:0.527 step_s:0.551 smp/s:15 mem_gb:3.75 losses_after_forward:1.308 losses_after_in_ep_bound:0.912 losses_after_rm_padding:0.912
+
+Training:  39%|███▉      | 62/160 [00:34<00:53,  1.83step/s]INFO 2026-11-26 17:09:34 ot_train.py:894 step:62 smpl:496 ep:6 epch:2.07 loss:1.440 grdn:0.000 lr:6.8e-05 data_s:0.010 prep_s:0.002 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.280 losses_after_in_ep_bound:0.947 losses_after_rm_padding:0.947
+
+Training:  39%|███▉      | 63/160 [00:35<00:52,  1.84step/s]INFO 2026-11-26 17:09:34 ot_train.py:894 step:63 smpl:504 ep:6 epch:2.10 loss:1.411 grdn:0.000 lr:6.7e-05 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.255 losses_after_in_ep_bound:1.037 losses_after_rm_padding:1.037
+
+Training:  40%|████      | 64/160 [00:35<00:52,  1.82step/s]INFO 2026-11-26 17:09:35 ot_train.py:894 step:64 smpl:512 ep:6 epch:2.13 loss:1.490 grdn:8.331 lr:6.6e-05 data_s:0.010 prep_s:0.001 updt_s:0.548 step_s:0.561 smp/s:14 mem_gb:3.75 losses_after_forward:1.297 losses_after_in_ep_bound:1.077 losses_after_rm_padding:1.077
+
+Training:  41%|████      | 65/160 [00:36<00:51,  1.83step/s]INFO 2026-11-26 17:09:35 ot_train.py:894 step:65 smpl:520 ep:6 epch:2.17 loss:1.342 grdn:0.000 lr:6.5e-05 data_s:0.010 prep_s:0.001 updt_s:0.527 step_s:0.540 smp/s:15 mem_gb:3.53 losses_after_forward:1.222 losses_after_in_ep_bound:1.023 losses_after_rm_padding:1.023
+
+Training:  41%|████▏     | 66/160 [00:36<00:51,  1.83step/s]INFO 2026-11-26 17:09:36 ot_train.py:894 step:66 smpl:528 ep:7 epch:2.20 loss:1.388 grdn:0.000 lr:6.4e-05 data_s:0.011 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.262 losses_after_in_ep_bound:0.996 losses_after_rm_padding:0.996
+
+Training:  42%|████▏     | 67/160 [00:37<00:50,  1.83step/s]INFO 2026-11-26 17:09:37 ot_train.py:894 step:67 smpl:536 ep:7 epch:2.23 loss:1.372 grdn:0.000 lr:6.4e-05 data_s:0.012 prep_s:0.001 updt_s:0.529 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.240 losses_after_in_ep_bound:1.001 losses_after_rm_padding:1.001
+
+Training:  42%|████▎     | 68/160 [00:37<00:50,  1.83step/s]INFO 2026-11-26 17:09:37 ot_train.py:894 step:68 smpl:544 ep:7 epch:2.27 loss:1.352 grdn:0.000 lr:6.3e-05 data_s:0.010 prep_s:0.005 updt_s:0.530 step_s:0.546 smp/s:15 mem_gb:3.75 losses_after_forward:1.291 losses_after_in_ep_bound:1.010 losses_after_rm_padding:1.010
+
+Training:  43%|████▎     | 69/160 [00:38<00:49,  1.84step/s]INFO 2026-11-26 17:09:38 ot_train.py:894 step:69 smpl:552 ep:7 epch:2.30 loss:1.369 grdn:0.000 lr:6.2e-05 data_s:0.010 prep_s:0.001 updt_s:0.529 step_s:0.541 smp/s:15 mem_gb:3.75 losses_after_forward:1.258 losses_after_in_ep_bound:1.034 losses_after_rm_padding:1.034
+
+Training:  44%|████▍     | 70/160 [00:38<00:48,  1.84step/s]INFO 2026-11-26 17:09:38 ot_train.py:894 step:70 smpl:560 ep:7 epch:2.33 loss:1.317 grdn:0.000 lr:6.1e-05 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.142 losses_after_in_ep_bound:0.635 losses_after_rm_padding:0.635
+
+Training:  44%|████▍     | 71/160 [00:39<00:48,  1.84step/s]INFO 2026-11-26 17:09:39 ot_train.py:894 step:71 smpl:568 ep:7 epch:2.37 loss:1.428 grdn:0.000 lr:6.0e-05 data_s:0.011 prep_s:0.001 updt_s:0.530 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.188 losses_after_in_ep_bound:0.828 losses_after_rm_padding:0.828
+
+Training:  45%|████▌     | 72/160 [00:39<00:48,  1.82step/s]INFO 2026-11-26 17:09:39 ot_train.py:894 step:72 smpl:576 ep:7 epch:2.40 loss:1.314 grdn:6.422 lr:5.9e-05 data_s:0.010 prep_s:0.001 updt_s:0.547 step_s:0.559 smp/s:14 mem_gb:3.75 losses_after_forward:1.234 losses_after_in_ep_bound:1.061 losses_after_rm_padding:1.061
+
+Training:  46%|████▌     | 73/160 [00:40<00:47,  1.83step/s]INFO 2026-11-26 17:09:40 ot_train.py:894 step:73 smpl:584 ep:7 epch:2.43 loss:1.339 grdn:0.000 lr:5.8e-05 data_s:0.011 prep_s:0.001 updt_s:0.528 step_s:0.541 smp/s:15 mem_gb:3.53 losses_after_forward:1.239 losses_after_in_ep_bound:0.924 losses_after_rm_padding:0.924
+
+Training:  46%|████▋     | 74/160 [00:41<00:46,  1.83step/s]INFO 2026-11-26 17:09:40 ot_train.py:894 step:74 smpl:592 ep:7 epch:2.47 loss:1.332 grdn:0.000 lr:5.7e-05 data_s:0.011 prep_s:0.001 updt_s:0.529 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.149 losses_after_in_ep_bound:0.796 losses_after_rm_padding:0.796
+
+Training:  47%|████▋     | 75/160 [00:41<00:46,  1.83step/s]INFO 2026-11-26 17:09:41 ot_train.py:894 step:75 smpl:600 ep:8 epch:2.50 loss:1.299 grdn:0.000 lr:5.6e-05 data_s:0.011 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.202 losses_after_in_ep_bound:1.042 losses_after_rm_padding:1.042
+
+Training:  48%|████▊     | 76/160 [00:42<00:45,  1.83step/s]INFO 2026-11-26 17:09:41 ot_train.py:894 step:76 smpl:608 ep:8 epch:2.53 loss:1.350 grdn:0.000 lr:5.5e-05 data_s:0.011 prep_s:0.001 updt_s:0.531 step_s:0.545 smp/s:15 mem_gb:3.75 losses_after_forward:1.291 losses_after_in_ep_bound:1.161 losses_after_rm_padding:1.161
+
+Training:  48%|████▊     | 77/160 [00:42<00:45,  1.83step/s]INFO 2026-11-26 17:09:42 ot_train.py:894 step:77 smpl:616 ep:8 epch:2.57 loss:1.280 grdn:0.000 lr:5.4e-05 data_s:0.011 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.181 losses_after_in_ep_bound:0.829 losses_after_rm_padding:0.829
+
+Training:  49%|████▉     | 78/160 [00:43<00:44,  1.84step/s]INFO 2026-11-26 17:09:43 ot_train.py:894 step:78 smpl:624 ep:8 epch:2.60 loss:1.387 grdn:0.000 lr:5.3e-05 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.314 losses_after_in_ep_bound:1.158 losses_after_rm_padding:1.158
+
+Training:  49%|████▉     | 79/160 [00:43<00:44,  1.84step/s]INFO 2026-11-26 17:09:43 ot_train.py:894 step:79 smpl:632 ep:8 epch:2.63 loss:1.316 grdn:0.000 lr:5.2e-05 data_s:0.011 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.238 losses_after_in_ep_bound:0.724 losses_after_rm_padding:0.724
+
+Training:  50%|█████     | 80/160 [00:44<00:43,  1.82step/s]INFO 2026-11-26 17:09:44 ot_train.py:894 step:80 smpl:640 ep:8 epch:2.67 loss:1.266 grdn:2.911 lr:5.1e-05 data_s:0.009 prep_s:0.001 updt_s:0.547 step_s:0.558 smp/s:14 mem_gb:3.75 losses_after_forward:1.166 losses_after_in_ep_bound:0.775 losses_after_rm_padding:0.775
+
+Training:  51%|█████     | 81/160 [00:44<00:43,  1.83step/s]INFO 2026-11-26 17:09:44 ot_train.py:894 step:81 smpl:648 ep:8 epch:2.70 loss:1.211 grdn:0.000 lr:5.0e-05 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.542 smp/s:15 mem_gb:3.53 losses_after_forward:1.109 losses_after_in_ep_bound:0.596 losses_after_rm_padding:0.596
+
+Training:  51%|█████▏    | 82/160 [00:45<00:42,  1.83step/s]INFO 2026-11-26 17:09:45 ot_train.py:894 step:82 smpl:656 ep:8 epch:2.73 loss:1.298 grdn:0.000 lr:4.9e-05 data_s:0.010 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.129 losses_after_in_ep_bound:0.694 losses_after_rm_padding:0.694
+
+Training:  52%|█████▏    | 83/160 [00:45<00:42,  1.83step/s]INFO 2026-11-26 17:09:45 ot_train.py:894 step:83 smpl:664 ep:8 epch:2.77 loss:1.286 grdn:0.000 lr:4.8e-05 data_s:0.011 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.248 losses_after_in_ep_bound:0.984 losses_after_rm_padding:0.984
+
+Training:  52%|█████▎    | 84/160 [00:46<00:41,  1.83step/s]INFO 2026-11-26 17:09:46 ot_train.py:894 step:84 smpl:672 ep:8 epch:2.80 loss:1.395 grdn:0.000 lr:4.7e-05 data_s:0.010 prep_s:0.001 updt_s:0.531 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.357 losses_after_in_ep_bound:1.269 losses_after_rm_padding:1.269
+
+Training:  53%|█████▎    | 85/160 [00:47<00:40,  1.84step/s]INFO 2026-11-26 17:09:46 ot_train.py:894 step:85 smpl:680 ep:8 epch:2.83 loss:1.214 grdn:0.000 lr:4.6e-05 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.041 losses_after_in_ep_bound:0.595 losses_after_rm_padding:0.595
+
+Training:  54%|█████▍    | 86/160 [00:47<00:40,  1.84step/s]INFO 2026-11-26 17:09:47 ot_train.py:894 step:86 smpl:688 ep:9 epch:2.87 loss:1.324 grdn:0.000 lr:4.6e-05 data_s:0.012 prep_s:0.001 updt_s:0.530 step_s:0.545 smp/s:15 mem_gb:3.75 losses_after_forward:1.272 losses_after_in_ep_bound:1.095 losses_after_rm_padding:1.095
+
+Training:  54%|█████▍    | 87/160 [00:48<00:39,  1.83step/s]INFO 2026-11-26 17:09:47 ot_train.py:894 step:87 smpl:696 ep:9 epch:2.90 loss:1.212 grdn:0.000 lr:4.5e-05 data_s:0.010 prep_s:0.005 updt_s:0.531 step_s:0.547 smp/s:15 mem_gb:3.75 losses_after_forward:1.157 losses_after_in_ep_bound:0.888 losses_after_rm_padding:0.888
+
+Training:  55%|█████▌    | 88/160 [00:48<00:39,  1.82step/s]INFO 2026-11-26 17:09:48 ot_train.py:894 step:88 smpl:704 ep:9 epch:2.93 loss:1.193 grdn:2.339 lr:4.4e-05 data_s:0.010 prep_s:0.001 updt_s:0.550 step_s:0.563 smp/s:14 mem_gb:3.75 losses_after_forward:1.157 losses_after_in_ep_bound:0.927 losses_after_rm_padding:0.927
+
+Training:  56%|█████▌    | 89/160 [00:49<00:38,  1.82step/s]INFO 2026-11-26 17:09:49 ot_train.py:894 step:89 smpl:712 ep:9 epch:2.97 loss:1.283 grdn:0.000 lr:4.3e-05 data_s:0.010 prep_s:0.001 updt_s:0.529 step_s:0.541 smp/s:15 mem_gb:3.53 losses_after_forward:1.201 losses_after_in_ep_bound:0.920 losses_after_rm_padding:0.920
+
+Training:  56%|█████▋    | 90/160 [00:49<00:38,  1.84step/s]INFO 2026-11-26 17:09:49 ot_train.py:894 step:90 smpl:720 ep:9 epch:3.00 loss:1.164 grdn:0.000 lr:4.2e-05 data_s:0.001 prep_s:0.001 updt_s:0.532 step_s:0.535 smp/s:15 mem_gb:3.75 losses_after_forward:1.156 losses_after_in_ep_bound:0.763 losses_after_rm_padding:0.763
+
+Training:  57%|█████▋    | 91/160 [00:50<00:37,  1.83step/s]INFO 2026-11-26 17:09:50 ot_train.py:894 step:91 smpl:728 ep:9 epch:3.03 loss:1.268 grdn:0.000 lr:4.1e-05 data_s:0.020 prep_s:0.001 updt_s:0.529 step_s:0.550 smp/s:15 mem_gb:3.75 losses_after_forward:1.150 losses_after_in_ep_bound:0.827 losses_after_rm_padding:0.827
+
+Training:  57%|█████▊    | 92/160 [00:50<00:37,  1.83step/s]INFO 2026-11-26 17:09:50 ot_train.py:894 step:92 smpl:736 ep:9 epch:3.07 loss:1.378 grdn:0.000 lr:4.0e-05 data_s:0.010 prep_s:0.001 updt_s:0.532 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.258 losses_after_in_ep_bound:0.765 losses_after_rm_padding:0.765
+
+Training:  58%|█████▊    | 93/160 [00:51<00:36,  1.83step/s]INFO 2026-11-26 17:09:51 ot_train.py:894 step:93 smpl:744 ep:9 epch:3.10 loss:1.217 grdn:0.000 lr:3.9e-05 data_s:0.010 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.135 losses_after_in_ep_bound:0.858 losses_after_rm_padding:0.858
+
+Training:  59%|█████▉    | 94/160 [00:51<00:35,  1.83step/s]INFO 2026-11-26 17:09:51 ot_train.py:894 step:94 smpl:752 ep:9 epch:3.13 loss:1.216 grdn:0.000 lr:3.8e-05 data_s:0.010 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.140 losses_after_in_ep_bound:0.896 losses_after_rm_padding:0.896
+
+Training:  59%|█████▉    | 95/160 [00:52<00:35,  1.83step/s]INFO 2026-11-26 17:09:52 ot_train.py:894 step:95 smpl:760 ep:10 epch:3.17 loss:1.379 grdn:0.000 lr:3.7e-05 data_s:0.011 prep_s:0.001 updt_s:0.531 step_s:0.545 smp/s:15 mem_gb:3.75 losses_after_forward:1.291 losses_after_in_ep_bound:1.120 losses_after_rm_padding:1.120
+
+Training:  60%|██████    | 96/160 [00:53<00:35,  1.82step/s]INFO 2026-11-26 17:09:52 ot_train.py:894 step:96 smpl:768 ep:10 epch:3.20 loss:1.246 grdn:2.791 lr:3.6e-05 data_s:0.010 prep_s:0.001 updt_s:0.548 step_s:0.561 smp/s:14 mem_gb:3.75 losses_after_forward:1.113 losses_after_in_ep_bound:0.651 losses_after_rm_padding:0.651
+
+Training:  61%|██████    | 97/160 [00:53<00:34,  1.82step/s]INFO 2026-11-26 17:09:53 ot_train.py:894 step:97 smpl:776 ep:10 epch:3.23 loss:1.233 grdn:0.000 lr:3.5e-05 data_s:0.010 prep_s:0.001 updt_s:0.532 step_s:0.545 smp/s:15 mem_gb:3.53 losses_after_forward:1.142 losses_after_in_ep_bound:0.814 losses_after_rm_padding:0.814
+
+Training:  61%|██████▏   | 98/160 [00:54<00:33,  1.83step/s]INFO 2026-11-26 17:09:53 ot_train.py:894 step:98 smpl:784 ep:10 epch:3.27 loss:1.240 grdn:0.000 lr:3.4e-05 data_s:0.011 prep_s:0.001 updt_s:0.529 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.175 losses_after_in_ep_bound:0.707 losses_after_rm_padding:0.707
+
+Training:  62%|██████▏   | 99/160 [00:54<00:33,  1.83step/s]INFO 2026-11-26 17:09:54 ot_train.py:894 step:99 smpl:792 ep:10 epch:3.30 loss:1.209 grdn:0.000 lr:3.3e-05 data_s:0.011 prep_s:0.001 updt_s:0.531 step_s:0.545 smp/s:15 mem_gb:3.75 losses_after_forward:1.189 losses_after_in_ep_bound:1.088 losses_after_rm_padding:1.088
+
+Training:  62%|██████▎   | 100/160 [00:55<00:32,  1.83step/s]INFO 2026-11-26 17:09:55 ot_train.py:894 step:100 smpl:800 ep:10 epch:3.33 loss:1.311 grdn:0.000 lr:3.3e-05 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.261 losses_after_in_ep_bound:1.039 losses_after_rm_padding:1.039
+
+Training:  63%|██████▎   | 101/160 [00:55<00:32,  1.83step/s]INFO 2026-11-26 17:09:55 ot_train.py:894 step:101 smpl:808 ep:10 epch:3.37 loss:1.175 grdn:0.000 lr:3.2e-05 data_s:0.011 prep_s:0.001 updt_s:0.533 step_s:0.546 smp/s:15 mem_gb:3.75 losses_after_forward:1.124 losses_after_in_ep_bound:0.802 losses_after_rm_padding:0.802
+
+Training:  64%|██████▍   | 102/160 [00:56<00:31,  1.83step/s]INFO 2026-11-26 17:09:56 ot_train.py:894 step:102 smpl:816 ep:10 epch:3.40 loss:1.308 grdn:0.000 lr:3.1e-05 data_s:0.010 prep_s:0.001 updt_s:0.533 step_s:0.546 smp/s:15 mem_gb:3.75 losses_after_forward:1.228 losses_after_in_ep_bound:1.007 losses_after_rm_padding:1.007
+
+Training:  64%|██████▍   | 103/160 [00:56<00:31,  1.83step/s]INFO 2026-11-26 17:09:56 ot_train.py:894 step:103 smpl:824 ep:10 epch:3.43 loss:1.186 grdn:0.000 lr:3.0e-05 data_s:0.011 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.151 losses_after_in_ep_bound:0.756 losses_after_rm_padding:0.756
+
+Training:  65%|██████▌   | 104/160 [00:57<00:30,  1.81step/s]INFO 2026-11-26 17:09:57 ot_train.py:894 step:104 smpl:832 ep:10 epch:3.47 loss:1.251 grdn:3.271 lr:2.9e-05 data_s:0.011 prep_s:0.001 updt_s:0.551 step_s:0.564 smp/s:14 mem_gb:3.75 losses_after_forward:1.175 losses_after_in_ep_bound:0.894 losses_after_rm_padding:0.894
+
+Training:  66%|██████▌   | 105/160 [00:57<00:30,  1.82step/s]INFO 2026-11-26 17:09:57 ot_train.py:894 step:105 smpl:840 ep:10 epch:3.50 loss:1.243 grdn:0.000 lr:2.8e-05 data_s:0.011 prep_s:0.001 updt_s:0.529 step_s:0.541 smp/s:15 mem_gb:3.53 losses_after_forward:1.100 losses_after_in_ep_bound:0.739 losses_after_rm_padding:0.739
+
+Training:  66%|██████▋   | 106/160 [00:58<00:29,  1.83step/s]INFO 2026-11-26 17:09:58 ot_train.py:894 step:106 smpl:848 ep:11 epch:3.53 loss:1.235 grdn:0.000 lr:2.7e-05 data_s:0.009 prep_s:0.001 updt_s:0.532 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.182 losses_after_in_ep_bound:0.911 losses_after_rm_padding:0.911
+
+Training:  67%|██████▋   | 107/160 [00:59<00:28,  1.83step/s]INFO 2026-11-26 17:09:58 ot_train.py:894 step:107 smpl:856 ep:11 epch:3.57 loss:1.237 grdn:0.000 lr:2.7e-05 data_s:0.011 prep_s:0.002 updt_s:0.530 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.166 losses_after_in_ep_bound:0.640 losses_after_rm_padding:0.640
+
+Training:  68%|██████▊   | 108/160 [00:59<00:28,  1.83step/s]INFO 2026-11-26 17:09:59 ot_train.py:894 step:108 smpl:864 ep:11 epch:3.60 loss:1.263 grdn:0.000 lr:2.6e-05 data_s:0.012 prep_s:0.001 updt_s:0.531 step_s:0.546 smp/s:15 mem_gb:3.75 losses_after_forward:1.191 losses_after_in_ep_bound:0.745 losses_after_rm_padding:0.745
+
+Training:  68%|██████▊   | 109/160 [01:00<00:27,  1.83step/s]INFO 2026-11-26 17:09:59 ot_train.py:894 step:109 smpl:872 ep:11 epch:3.63 loss:1.296 grdn:0.000 lr:2.5e-05 data_s:0.009 prep_s:0.002 updt_s:0.532 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.234 losses_after_in_ep_bound:0.843 losses_after_rm_padding:0.843
+
+Training:  69%|██████▉   | 110/160 [01:00<00:27,  1.83step/s]INFO 2026-11-26 17:10:00 ot_train.py:894 step:110 smpl:880 ep:11 epch:3.67 loss:1.255 grdn:0.000 lr:2.4e-05 data_s:0.011 prep_s:0.001 updt_s:0.532 step_s:0.545 smp/s:15 mem_gb:3.75 losses_after_forward:1.193 losses_after_in_ep_bound:0.923 losses_after_rm_padding:0.923
+
+Training:  69%|██████▉   | 111/160 [01:01<00:26,  1.83step/s]INFO 2026-11-26 17:10:01 ot_train.py:894 step:111 smpl:888 ep:11 epch:3.70 loss:1.205 grdn:0.000 lr:2.3e-05 data_s:0.011 prep_s:0.001 updt_s:0.530 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.123 losses_after_in_ep_bound:0.789 losses_after_rm_padding:0.789
+
+Training:  70%|███████   | 112/160 [01:01<00:26,  1.82step/s]INFO 2026-11-26 17:10:01 ot_train.py:894 step:112 smpl:896 ep:11 epch:3.73 loss:1.214 grdn:3.388 lr:2.3e-05 data_s:0.010 prep_s:0.001 updt_s:0.550 step_s:0.562 smp/s:14 mem_gb:3.75 losses_after_forward:1.163 losses_after_in_ep_bound:0.941 losses_after_rm_padding:0.941
+
+Training:  71%|███████   | 113/160 [01:02<00:25,  1.82step/s]INFO 2026-11-26 17:10:02 ot_train.py:894 step:113 smpl:904 ep:11 epch:3.77 loss:1.238 grdn:0.000 lr:2.2e-05 data_s:0.011 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.53 losses_after_forward:1.165 losses_after_in_ep_bound:0.904 losses_after_rm_padding:0.904
+
+Training:  71%|███████▏  | 114/160 [01:02<00:25,  1.83step/s]INFO 2026-11-26 17:10:02 ot_train.py:894 step:114 smpl:912 ep:11 epch:3.80 loss:1.234 grdn:0.000 lr:2.1e-05 data_s:0.010 prep_s:0.001 updt_s:0.532 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.164 losses_after_in_ep_bound:0.716 losses_after_rm_padding:0.716
+
+Training:  72%|███████▏  | 115/160 [01:03<00:24,  1.83step/s]INFO 2026-11-26 17:10:03 ot_train.py:894 step:115 smpl:920 ep:12 epch:3.83 loss:1.209 grdn:0.000 lr:2.0e-05 data_s:0.010 prep_s:0.001 updt_s:0.532 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.157 losses_after_in_ep_bound:0.916 losses_after_rm_padding:0.916
+
+Training:  72%|███████▎  | 116/160 [01:03<00:24,  1.83step/s]INFO 2026-11-26 17:10:03 ot_train.py:894 step:116 smpl:928 ep:12 epch:3.87 loss:1.244 grdn:0.000 lr:2.0e-05 data_s:0.011 prep_s:0.001 updt_s:0.532 step_s:0.545 smp/s:15 mem_gb:3.75 losses_after_forward:1.180 losses_after_in_ep_bound:0.977 losses_after_rm_padding:0.977
+
+Training:  73%|███████▎  | 117/160 [01:04<00:23,  1.83step/s]INFO 2026-11-26 17:10:04 ot_train.py:894 step:117 smpl:936 ep:12 epch:3.90 loss:1.227 grdn:0.000 lr:1.9e-05 data_s:0.009 prep_s:0.001 updt_s:0.531 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.185 losses_after_in_ep_bound:0.899 losses_after_rm_padding:0.899
+
+Training:  74%|███████▍  | 118/160 [01:05<00:22,  1.83step/s]INFO 2026-11-26 17:10:04 ot_train.py:894 step:118 smpl:944 ep:12 epch:3.93 loss:1.161 grdn:0.000 lr:1.8e-05 data_s:0.012 prep_s:0.001 updt_s:0.531 step_s:0.545 smp/s:15 mem_gb:3.75 losses_after_forward:1.083 losses_after_in_ep_bound:0.839 losses_after_rm_padding:0.839
+
+Training:  74%|███████▍  | 119/160 [01:05<00:22,  1.83step/s]INFO 2026-11-26 17:10:05 ot_train.py:894 step:119 smpl:952 ep:12 epch:3.97 loss:1.188 grdn:0.000 lr:1.7e-05 data_s:0.010 prep_s:0.001 updt_s:0.532 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.161 losses_after_in_ep_bound:0.885 losses_after_rm_padding:0.885
+
+Training:  75%|███████▌  | 120/160 [01:06<00:21,  1.83step/s]INFO 2026-11-26 17:10:05 ot_train.py:894 step:120 smpl:960 ep:12 epch:4.00 loss:1.125 grdn:3.013 lr:1.7e-05 data_s:0.001 prep_s:0.001 updt_s:0.550 step_s:0.553 smp/s:14 mem_gb:3.75 losses_after_forward:1.073 losses_after_in_ep_bound:0.892 losses_after_rm_padding:0.892
+
+Training:  76%|███████▌  | 121/160 [01:06<00:21,  1.82step/s]INFO 2026-11-26 17:10:06 ot_train.py:894 step:121 smpl:968 ep:12 epch:4.03 loss:1.298 grdn:0.000 lr:1.6e-05 data_s:0.020 prep_s:0.001 updt_s:0.526 step_s:0.548 smp/s:15 mem_gb:3.53 losses_after_forward:1.222 losses_after_in_ep_bound:1.100 losses_after_rm_padding:1.100
+
+Training:  76%|███████▋  | 122/160 [01:07<00:20,  1.83step/s]INFO 2026-11-26 17:10:07 ot_train.py:894 step:122 smpl:976 ep:12 epch:4.07 loss:1.151 grdn:0.000 lr:1.5e-05 data_s:0.011 prep_s:0.001 updt_s:0.532 step_s:0.545 smp/s:15 mem_gb:3.75 losses_after_forward:1.083 losses_after_in_ep_bound:0.760 losses_after_rm_padding:0.760
+
+Training:  77%|███████▋  | 123/160 [01:07<00:20,  1.83step/s]INFO 2026-11-26 17:10:07 ot_train.py:894 step:123 smpl:984 ep:12 epch:4.10 loss:1.209 grdn:0.000 lr:1.5e-05 data_s:0.010 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.135 losses_after_in_ep_bound:0.768 losses_after_rm_padding:0.768
+
+Training:  78%|███████▊  | 124/160 [01:08<00:19,  1.83step/s]INFO 2026-11-26 17:10:08 ot_train.py:894 step:124 smpl:992 ep:12 epch:4.13 loss:1.175 grdn:0.000 lr:1.4e-05 data_s:0.010 prep_s:0.001 updt_s:0.532 step_s:0.545 smp/s:15 mem_gb:3.75 losses_after_forward:1.106 losses_after_in_ep_bound:0.740 losses_after_rm_padding:0.740
+
+Training:  78%|███████▊  | 125/160 [01:08<00:19,  1.83step/s]INFO 2026-11-26 17:10:08 ot_train.py:894 step:125 smpl:1K ep:12 epch:4.17 loss:1.187 grdn:0.000 lr:1.4e-05 data_s:0.010 prep_s:0.002 updt_s:0.530 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.170 losses_after_in_ep_bound:1.006 losses_after_rm_padding:1.006
+
+Training:  79%|███████▉  | 126/160 [01:09<00:18,  1.83step/s]INFO 2026-11-26 17:10:09 ot_train.py:894 step:126 smpl:1K ep:13 epch:4.20 loss:1.334 grdn:0.000 lr:1.3e-05 data_s:0.010 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.301 losses_after_in_ep_bound:0.970 losses_after_rm_padding:0.970
+
+Training:  79%|███████▉  | 127/160 [01:10<00:17,  1.84step/s]INFO 2026-11-26 17:10:09 ot_train.py:894 step:127 smpl:1K ep:13 epch:4.23 loss:1.075 grdn:0.000 lr:1.2e-05 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.068 losses_after_in_ep_bound:0.823 losses_after_rm_padding:0.823
+
+Training:  80%|████████  | 128/160 [01:10<00:17,  1.82step/s]INFO 2026-11-26 17:10:10 ot_train.py:894 step:128 smpl:1K ep:13 epch:4.27 loss:1.214 grdn:2.718 lr:1.2e-05 data_s:0.010 prep_s:0.001 updt_s:0.550 step_s:0.563 smp/s:14 mem_gb:3.75 losses_after_forward:1.165 losses_after_in_ep_bound:1.007 losses_after_rm_padding:1.007
+
+Training:  81%|████████  | 129/160 [01:11<00:16,  1.83step/s]INFO 2026-11-26 17:10:10 ot_train.py:894 step:129 smpl:1K ep:13 epch:4.30 loss:1.230 grdn:0.000 lr:1.1e-05 data_s:0.010 prep_s:0.001 updt_s:0.528 step_s:0.540 smp/s:15 mem_gb:3.53 losses_after_forward:1.167 losses_after_in_ep_bound:0.959 losses_after_rm_padding:0.959
+
+Training:  81%|████████▏ | 130/160 [01:11<00:16,  1.83step/s]INFO 2026-11-26 17:10:11 ot_train.py:894 step:130 smpl:1K ep:13 epch:4.33 loss:1.254 grdn:0.000 lr:1.1e-05 data_s:0.010 prep_s:0.001 updt_s:0.531 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.193 losses_after_in_ep_bound:0.815 losses_after_rm_padding:0.815
+
+Training:  82%|████████▏ | 131/160 [01:12<00:15,  1.83step/s]INFO 2026-11-26 17:10:11 ot_train.py:894 step:131 smpl:1K ep:13 epch:4.37 loss:1.268 grdn:0.000 lr:1.0e-05 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.225 losses_after_in_ep_bound:1.087 losses_after_rm_padding:1.087
+
+Training:  82%|████████▎ | 132/160 [01:12<00:15,  1.83step/s]INFO 2026-11-26 17:10:12 ot_train.py:894 step:132 smpl:1K ep:13 epch:4.40 loss:1.173 grdn:0.000 lr:9.7e-06 data_s:0.011 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.154 losses_after_in_ep_bound:0.871 losses_after_rm_padding:0.871
+
+Training:  83%|████████▎ | 133/160 [01:13<00:14,  1.83step/s]INFO 2026-11-26 17:10:13 ot_train.py:894 step:133 smpl:1K ep:13 epch:4.43 loss:1.059 grdn:0.000 lr:9.2e-06 data_s:0.010 prep_s:0.001 updt_s:0.532 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:0.988 losses_after_in_ep_bound:0.339 losses_after_rm_padding:0.339
+
+Training:  84%|████████▍ | 134/160 [01:13<00:14,  1.83step/s]INFO 2026-11-26 17:10:13 ot_train.py:894 step:134 smpl:1K ep:13 epch:4.47 loss:1.272 grdn:0.000 lr:8.7e-06 data_s:0.010 prep_s:0.001 updt_s:0.533 step_s:0.545 smp/s:15 mem_gb:3.75 losses_after_forward:1.217 losses_after_in_ep_bound:1.030 losses_after_rm_padding:1.030
+
+Training:  84%|████████▍ | 135/160 [01:14<00:13,  1.84step/s]INFO 2026-11-26 17:10:14 ot_train.py:894 step:135 smpl:1K ep:14 epch:4.50 loss:1.260 grdn:0.000 lr:8.3e-06 data_s:0.011 prep_s:0.001 updt_s:0.530 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.189 losses_after_in_ep_bound:0.847 losses_after_rm_padding:0.847
+
+Training:  85%|████████▌ | 136/160 [01:14<00:13,  1.82step/s]INFO 2026-11-26 17:10:14 ot_train.py:894 step:136 smpl:1K ep:14 epch:4.53 loss:1.135 grdn:3.175 lr:7.8e-06 data_s:0.010 prep_s:0.001 updt_s:0.549 step_s:0.562 smp/s:14 mem_gb:3.75 losses_after_forward:1.121 losses_after_in_ep_bound:0.797 losses_after_rm_padding:0.797
+
+Training:  86%|████████▌ | 137/160 [01:15<00:12,  1.82step/s]INFO 2026-11-26 17:10:15 ot_train.py:894 step:137 smpl:1K ep:14 epch:4.57 loss:1.264 grdn:0.000 lr:7.4e-06 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.543 smp/s:15 mem_gb:3.53 losses_after_forward:1.227 losses_after_in_ep_bound:0.724 losses_after_rm_padding:0.724
+
+Training:  86%|████████▋ | 138/160 [01:16<00:12,  1.83step/s]INFO 2026-11-26 17:10:15 ot_train.py:894 step:138 smpl:1K ep:14 epch:4.60 loss:1.281 grdn:0.000 lr:7.0e-06 data_s:0.010 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.120 losses_after_in_ep_bound:0.641 losses_after_rm_padding:0.641
+
+Training:  87%|████████▋ | 139/160 [01:16<00:11,  1.83step/s]INFO 2026-11-26 17:10:16 ot_train.py:894 step:139 smpl:1K ep:14 epch:4.63 loss:1.210 grdn:0.000 lr:6.6e-06 data_s:0.010 prep_s:0.006 updt_s:0.531 step_s:0.549 smp/s:15 mem_gb:3.75 losses_after_forward:1.148 losses_after_in_ep_bound:0.880 losses_after_rm_padding:0.880
+
+Training:  88%|████████▊ | 140/160 [01:17<00:10,  1.83step/s]INFO 2026-11-26 17:10:16 ot_train.py:894 step:140 smpl:1K ep:14 epch:4.67 loss:1.311 grdn:0.000 lr:6.2e-06 data_s:0.011 prep_s:0.001 updt_s:0.530 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.218 losses_after_in_ep_bound:0.950 losses_after_rm_padding:0.950
+
+Training:  88%|████████▊ | 141/160 [01:17<00:10,  1.83step/s]INFO 2026-11-26 17:10:17 ot_train.py:894 step:141 smpl:1K ep:14 epch:4.70 loss:1.215 grdn:0.000 lr:5.9e-06 data_s:0.011 prep_s:0.001 updt_s:0.534 step_s:0.547 smp/s:15 mem_gb:3.75 losses_after_forward:1.171 losses_after_in_ep_bound:0.914 losses_after_rm_padding:0.914
+
+Training:  89%|████████▉ | 142/160 [01:18<00:09,  1.83step/s]INFO 2026-11-26 17:10:17 ot_train.py:894 step:142 smpl:1K ep:14 epch:4.73 loss:1.168 grdn:0.000 lr:5.5e-06 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.542 smp/s:15 mem_gb:3.75 losses_after_forward:1.137 losses_after_in_ep_bound:0.771 losses_after_rm_padding:0.771
+
+Training:  89%|████████▉ | 143/160 [01:18<00:09,  1.83step/s]INFO 2026-11-26 17:10:18 ot_train.py:894 step:143 smpl:1K ep:14 epch:4.77 loss:1.272 grdn:0.000 lr:5.2e-06 data_s:0.010 prep_s:0.001 updt_s:0.533 step_s:0.545 smp/s:15 mem_gb:3.75 losses_after_forward:1.178 losses_after_in_ep_bound:0.980 losses_after_rm_padding:0.980
+
+Training:  90%|█████████ | 144/160 [01:19<00:08,  1.82step/s]INFO 2026-11-26 17:10:19 ot_train.py:894 step:144 smpl:1K ep:14 epch:4.80 loss:1.194 grdn:3.264 lr:4.9e-06 data_s:0.010 prep_s:0.001 updt_s:0.549 step_s:0.561 smp/s:14 mem_gb:3.75 losses_after_forward:1.105 losses_after_in_ep_bound:0.696 losses_after_rm_padding:0.696
+
+Training:  91%|█████████ | 145/160 [01:19<00:08,  1.82step/s]INFO 2026-11-26 17:10:19 ot_train.py:894 step:145 smpl:1K ep:14 epch:4.83 loss:1.266 grdn:0.000 lr:4.6e-06 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.543 smp/s:15 mem_gb:3.53 losses_after_forward:1.226 losses_after_in_ep_bound:1.066 losses_after_rm_padding:1.066
+
+Training:  91%|█████████▏| 146/160 [01:20<00:07,  1.83step/s]INFO 2026-11-26 17:10:20 ot_train.py:894 step:146 smpl:1K ep:15 epch:4.87 loss:1.272 grdn:0.000 lr:4.3e-06 data_s:0.010 prep_s:0.001 updt_s:0.532 step_s:0.545 smp/s:15 mem_gb:3.75 losses_after_forward:1.194 losses_after_in_ep_bound:0.843 losses_after_rm_padding:0.843
+
+Training:  92%|█████████▏| 147/160 [01:20<00:07,  1.83step/s]INFO 2026-11-26 17:10:20 ot_train.py:894 step:147 smpl:1K ep:15 epch:4.90 loss:1.329 grdn:0.000 lr:4.1e-06 data_s:0.010 prep_s:0.001 updt_s:0.532 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.146 losses_after_in_ep_bound:0.681 losses_after_rm_padding:0.681
+
+Training:  92%|█████████▎| 148/160 [01:21<00:06,  1.83step/s]INFO 2026-11-26 17:10:21 ot_train.py:894 step:148 smpl:1K ep:15 epch:4.93 loss:1.183 grdn:0.000 lr:3.8e-06 data_s:0.011 prep_s:0.001 updt_s:0.533 step_s:0.545 smp/s:15 mem_gb:3.75 losses_after_forward:1.187 losses_after_in_ep_bound:0.677 losses_after_rm_padding:0.677
+
+Training:  93%|█████████▎| 149/160 [01:22<00:06,  1.83step/s]INFO 2026-11-26 17:10:21 ot_train.py:894 step:149 smpl:1K ep:15 epch:4.97 loss:1.319 grdn:0.000 lr:3.6e-06 data_s:0.013 prep_s:0.001 updt_s:0.531 step_s:0.546 smp/s:15 mem_gb:3.75 losses_after_forward:1.212 losses_after_in_ep_bound:0.864 losses_after_rm_padding:0.864
+
+Training:  94%|█████████▍| 150/160 [01:22<00:05,  1.84step/s]INFO 2026-11-26 17:10:22 ot_train.py:894 step:150 smpl:1K ep:15 epch:5.00 loss:1.249 grdn:0.000 lr:3.4e-06 data_s:0.000 prep_s:0.001 updt_s:0.535 step_s:0.538 smp/s:15 mem_gb:3.75 losses_after_forward:1.248 losses_after_in_ep_bound:0.999 losses_after_rm_padding:0.999
+
+Training:  94%|█████████▍| 151/160 [01:23<00:04,  1.83step/s]INFO 2026-11-26 17:10:22 ot_train.py:894 step:151 smpl:1K ep:15 epch:5.03 loss:1.183 grdn:0.000 lr:3.3e-06 data_s:0.020 prep_s:0.006 updt_s:0.528 step_s:0.555 smp/s:14 mem_gb:3.75 losses_after_forward:1.124 losses_after_in_ep_bound:0.565 losses_after_rm_padding:0.565
+
+Training:  95%|█████████▌| 152/160 [01:23<00:04,  1.81step/s]INFO 2026-11-26 17:10:23 ot_train.py:894 step:152 smpl:1K ep:15 epch:5.07 loss:1.126 grdn:3.032 lr:3.1e-06 data_s:0.009 prep_s:0.001 updt_s:0.554 step_s:0.565 smp/s:14 mem_gb:3.75 losses_after_forward:1.099 losses_after_in_ep_bound:0.574 losses_after_rm_padding:0.574
+
+Training:  96%|█████████▌| 153/160 [01:24<00:03,  1.82step/s]INFO 2026-11-26 17:10:24 ot_train.py:894 step:153 smpl:1K ep:15 epch:5.10 loss:1.104 grdn:0.000 lr:3.0e-06 data_s:0.010 prep_s:0.001 updt_s:0.528 step_s:0.541 smp/s:15 mem_gb:3.53 losses_after_forward:1.039 losses_after_in_ep_bound:0.646 losses_after_rm_padding:0.646
+
+Training:  96%|█████████▋| 154/160 [01:24<00:03,  1.82step/s]INFO 2026-11-26 17:10:24 ot_train.py:894 step:154 smpl:1K ep:15 epch:5.13 loss:1.225 grdn:0.000 lr:2.8e-06 data_s:0.009 prep_s:0.001 updt_s:0.535 step_s:0.546 smp/s:15 mem_gb:3.75 losses_after_forward:1.133 losses_after_in_ep_bound:0.903 losses_after_rm_padding:0.903
+
+Training:  97%|█████████▋| 155/160 [01:25<00:02,  1.83step/s]INFO 2026-11-26 17:10:25 ot_train.py:894 step:155 smpl:1K ep:16 epch:5.17 loss:1.229 grdn:0.000 lr:2.7e-06 data_s:0.010 prep_s:0.001 updt_s:0.530 step_s:0.543 smp/s:15 mem_gb:3.75 losses_after_forward:1.192 losses_after_in_ep_bound:0.968 losses_after_rm_padding:0.968
+
+Training:  98%|█████████▊| 156/160 [01:25<00:02,  1.83step/s]INFO 2026-11-26 17:10:25 ot_train.py:894 step:156 smpl:1K ep:16 epch:5.20 loss:1.211 grdn:0.000 lr:2.7e-06 data_s:0.010 prep_s:0.001 updt_s:0.536 step_s:0.548 smp/s:15 mem_gb:3.75 losses_after_forward:1.212 losses_after_in_ep_bound:0.939 losses_after_rm_padding:0.939
+
+Training:  98%|█████████▊| 157/160 [01:26<00:01,  1.83step/s]INFO 2026-11-26 17:10:26 ot_train.py:894 step:157 smpl:1K ep:16 epch:5.23 loss:1.245 grdn:0.000 lr:2.6e-06 data_s:0.010 prep_s:0.001 updt_s:0.531 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.145 losses_after_in_ep_bound:0.775 losses_after_rm_padding:0.775
+
+Training:  99%|█████████▉| 158/160 [01:26<00:01,  1.83step/s]INFO 2026-11-26 17:10:26 ot_train.py:894 step:158 smpl:1K ep:16 epch:5.27 loss:1.213 grdn:0.000 lr:2.5e-06 data_s:0.011 prep_s:0.001 updt_s:0.533 step_s:0.547 smp/s:15 mem_gb:3.75 losses_after_forward:1.197 losses_after_in_ep_bound:1.079 losses_after_rm_padding:1.079
+
+Training:  99%|█████████▉| 159/160 [01:27<00:00,  1.83step/s]INFO 2026-11-26 17:10:27 ot_train.py:894 step:159 smpl:1K ep:16 epch:5.30 loss:1.086 grdn:0.000 lr:2.5e-06 data_s:0.010 prep_s:0.001 updt_s:0.532 step_s:0.544 smp/s:15 mem_gb:3.75 losses_after_forward:1.089 losses_after_in_ep_bound:1.007 losses_after_rm_padding:1.007
+
+Training: 100%|██████████| 160/160 [01:28<00:00,  1.81step/s]INFO 2026-11-26 17:10:27 ot_train.py:894 step:160 smpl:1K ep:16 epch:5.33 loss:1.247 grdn:2.867 lr:2.5e-06 data_s:0.009 prep_s:0.001 updt_s:0.552 step_s:0.564 smp/s:14 mem_gb:3.75 losses_after_forward:1.205 losses_after_in_ep_bound:0.957 losses_after_rm_padding:0.957
+INFO 2026-11-26 17:10:27 ot_train.py:936 Checkpoint policy after step 160
+INFO 2026-11-26 17:10:28 n/_torch.py:299 Model weights successfully saved to /opt/jcheng/models/m2-gradaccum-20261126/checkpoints/000160/pretrained_model!
+
+Training: 100%|██████████| 160/160 [01:29<00:00,  1.79step/s]
+INFO 2026-11-26 17:10:29 t_train.py:1026 End of training

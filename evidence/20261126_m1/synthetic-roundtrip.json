@@ -1,0 +1,16 @@
+{
+  "action_max_abs_diff": 0.0,
+  "codebase_version": "v3.0",
+  "dataset_id": "synthetic-armpi_ultra-01352906",
+  "dropped_frames": 0,
+  "episodes": 2,
+  "frames": 8,
+  "image_max_abs_diff": 0,
+  "lerobot_version": "0.7.0",
+  "native_root_sha256": "sha256:8fa073d00002769d11b0408222a041114d0746bb3848e72a0efa7dc1c6f6a56d",
+  "profile": "armpi_ultra",
+  "result": "pass",
+  "schema": "jcheng.m1.compat-evidence.v1",
+  "source_class": "synthetic",
+  "state_max_abs_diff": 0.0
+}

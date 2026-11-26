@@ -32,10 +32,26 @@ for f in \
   docs/ARCHITECTURE.md \
   docs/DATA.md \
   docs/INTEGRATION.md \
+  docs/m1/00-INDEX.md \
+  docs/m1/04-DATA-CONTRACT.md \
+  docs/m2/00-PLAN.md \
+  docs/m2/EVAL.md \
+  docs/m2/BENCHMARK-PROPOSAL.md \
+  docs/m2/suites/m2-rehearsal-action-error-v1.yaml \
+  docs/m2/suites/m2-action-error-v1.yaml \
+  pyproject.toml \
+  uv.lock \
+  src/jcheng_learning/cli.py \
+  src/jcheng_learning/profiles/armpi_ultra.yaml \
+  src/jcheng_learning/schemas/jcheng.dataset-quality-report.v1.schema.json \
   tests/test_contract.py \
   tests/test_no_hardware.py \
   scripts/check_repo_gate.sh \
   evidence/20261126_scaffold/README.md \
+  evidence/20261126_m1/README.md \
+  evidence/20261126_m2-rehearsal/README.md \
+  evidence/20261126_m2-sweep/README.md \
+  evidence/20261126_m2-gradaccum/README.md \
   .github/workflows/ci.yml
 do
   require_file "$f"
@@ -105,6 +121,13 @@ if [[ "$fail" -ne 0 ]]; then
 fi
 
 echo "== tests"
-python3 -m pytest -q tests
+# Use the locked project environment when uv is available. Keep the venv outside
+# the repository so the secret/weight scans never see installed packages.
+export UV_PROJECT_ENVIRONMENT="${UV_PROJECT_ENVIRONMENT:-${XDG_CACHE_HOME:-$HOME/.cache}/jcheng-learning/venv}"
+if [[ -n "$(command -v uv)" ]] && [[ -f "$ROOT/uv.lock" ]]; then
+  uv run --frozen --extra test python -m pytest -q tests
+else
+  python3 -m pytest -q tests
+fi
 
 echo "Repository gate OK: document set, manifest, no LICENSE, no secrets, no weights, no recordings, links resolve"

@@ -1,0 +1,31 @@
+schema: jcheng.learning.robot_adapter.v1
+id: probe_2d
+version: "1.0.0"
+display_name: Probe 2D fixture (not a robot)
+
+has_gripper: false
+dof: 2
+joints:
+  - {name: j1, index: 0, type: revolute, unit: rad, lower: -2.0, upper: 2.0, role: j1}
+  - {name: j2, index: 1, type: revolute, unit: rad, lower: -2.0, upper: 2.0, role: j2}
+
+state_spaces:
+  - id: probe_2d.joint_state.v1
+    names: [j1, j2]
+    units: [rad, rad]
+    truth_allowed: [unknown, measured]
+
+action_spaces:
+  - id: probe_2d.joint_position_absolute.v1
+    kind: joint_position_absolute
+    names: [j1, j2]
+    units: [rad, rad]
+    limits_known: true
+
+cameras:
+  - {key: cam, role: external, required: true, width: 8, height: 8, rate_hz: 5.0}
+
+capabilities:
+  mobile_base: false
+  can_lift: false
+  max_payload_kg: null
