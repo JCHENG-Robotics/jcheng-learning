@@ -13,8 +13,8 @@ v0.1.0 it finds:
 |---|---|---|
 | `name` | `jcheng-learning` | capability identity |
 | `version` | `0.1.0` | must match `VERSION` |
-| `contract.interfaces` | `>=0.1,<0.2` | pinned contract range |
-| `contract.contract_hash` | `sha256:0b8d72…24b42` | must match the interfaces manifest |
+| `contract.interfaces` | `>=0.2,<0.3` | pinned contract range |
+| `contract.contract_hash` | `sha256:afca22…c35b1c` | must match the interfaces manifest |
 | `safety.class` | `offline` | no intent source yet |
 | `safety.scopes` | `[]` | no motion scope |
 | `safety.requires_lease` | `true` | required by the schema; vacuous while there is no runtime |
