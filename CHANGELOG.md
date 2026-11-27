@@ -8,6 +8,10 @@ All notable changes to this project are documented here. Format based on
 
 ### Added
 
+- Isolated regression baseline: `uv sync --frozen --extra test` in a venv
+  outside the repository, pyarrow 24.0.0 and 68 tests passed. The host
+  interpreter had no project dependencies; no `pyproject.toml` or `uv.lock`
+  change and no system-Python install. See `docs/REGRESSION-20261127.md`.
 - M2.0 rehearsal harness: `jcheng-train` wraps the official `lerobot-train`,
   `jcheng-eval` computes teacher-forced action error, and the policy card
   records checkpoint hashes and limitations.
