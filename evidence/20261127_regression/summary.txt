@@ -1,0 +1,11 @@
+Learning isolated regression — 2026-11-27
+python: 3.12.3
+env: /tmp/jcheng-learning-venv (outside repo)
+sync: uv sync --frozen --extra test --python 3.12
+test: uv run --frozen --extra test --python 3.12 python -m pytest tests -q
+pyarrow: 24.0.0
+pytest: 8.3.4
+uv.lock sha256: a866bfd19d1750faba90b51dd0d7b93e2ce720d1f78b66617a9deec54ba013e7
+result: 68 passed in 1.83s
+gate: Repository gate OK
+notes: no pyproject/uv.lock change; no system-Python install; no ROS/Gazebo/hardware
