@@ -6,6 +6,12 @@ All notable changes to this project are documented here. Format based on
 
 ## [Unreleased]
 
+### Changed
+
+- The planned M3 inference wrapper is documented as ROS 2 Jazzy on the
+  laptop/container, matching the default host toolchain. The ArmPi robot
+  runtime remains Humble and is not the M3 inference target.
+
 ### Added
 
 - Isolated regression baseline: `uv sync --frozen --extra test` in a venv
