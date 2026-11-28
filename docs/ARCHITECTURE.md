@@ -94,7 +94,9 @@ exploratory, not as acceptance.
 
 ## 4. Inference plane (M3, planned)
 
-The inference node will be a thin ROS 2 Humble wrapper around a ROS-free core.
+The inference node will be a thin ROS 2 Jazzy wrapper around a ROS-free core
+(the ArmPi runtime is Humble; M3 inference is planned for the laptop/container,
+not the robot's Python 3.10 environment).
 It will:
 
 - subscribe to observation streams owned by perception and the system layer;

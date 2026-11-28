@@ -47,7 +47,8 @@ The review must decide before the ecosystem reaches v1.0 (M1 adds the offline de
 | lerobot[dataset] 0.7.0 (extra) | official writer / compatibility oracle | Apache-2.0 | Keep notices; pulls torch |
 | torch 2.15 (extra) | LeRobot runtime | BSD-3-Clause | Large; optional only |
 | pytest / pytest-cov | tests only | MIT | Low |
-| ROS 2 Humble | M3 runtime | Apache-2.0 | Not used in M1 |
+| ROS 2 Jazzy | M3 runtime (planned host/container) | Apache-2.0 | Not used in M1 |
+| ROS 2 Humble | ArmPi compatibility only | Apache-2.0 | Not used in M1 |
 | Training framework (TBD) | M2 offline | TBD | Decide before adoption |
 | Datasets | M1/M2 | per dataset | Must be recorded per dataset |
 | Model weights | M2/M3 | per artifact | Must not enter git |
